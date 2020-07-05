@@ -1,0 +1,45 @@
+.actionBox{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    /*margin-left: auto;*/
+    width: 123px;
+    height: 72px;
+    /*background-color: white;*/
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    width: 3.5em !important;
+    height: auto;
+color: #ffffff;
+}
+.actionBox > img{
+    font-size: 4em;
+    color: blue;
+    /*width: auto;*/
+    /*height: auto;*/
+}
+.heart{
+    /*color: #c30000;*/
+    margin-right: 25px;
+}
+.basket{
+    /*color: blue;*/
+}
+@media (max-width: 332px) {
+    .actionBox {
+        margin-left: 19vw;
+    }
+}
+@media (max-width: 300px) {
+    .actionBox {
+        margin-left: 10vw;
+    }
+}

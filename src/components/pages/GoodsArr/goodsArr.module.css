@@ -1,0 +1,83 @@
+.goodsArr{
+    width: 82vw;
+    /*background-color: red;*/
+    height: 800px;
+}
+
+.goodsBox{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.goodsBox > *{
+    background-color: #c1c1c1;
+    min-width: 180px;
+    max-width: 95%;
+    height: 400px;
+    margin: 2vh .2vw;
+
+    /*width: 300px;*/
+    width: 16%;
+
+}
+
+@media (max-width: 1700px) {
+    .goodsArr{
+        width: 78vw;
+    }
+    .goodsBox > *{
+        width: 19%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .goodsBox > *{
+        width: 23%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .goodsArr{
+        width: 70vw;
+    }
+    .goodsBox > *{
+        width: 31%;
+    }
+}
+
+@media (max-width: 1025px) {
+    .goodsArr{
+        width: 100vw;
+    }
+    .goodsBox > *{
+        margin: 2vh .2vw;
+        width: 24%;
+    }
+}
+
+@media (max-width: 740px) {
+
+    .goodsBox > *{
+        margin: 2vh .1vw;
+        width: 32%;
+    }
+}
+@media (max-width: 544px) {
+
+    .goodsBox > *{
+        /*margin: 2vh .1vw;*/
+        width: 45%;
+    }
+}
+
+@media (max-width: 370px) {
+
+    .goodsBox > *{
+        margin: 2vh .1vw;
+        width: 65%;
+    }
+}

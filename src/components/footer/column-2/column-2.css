@@ -1,0 +1,7 @@
+.partners{
+    /*padding: 10px;*/
+}
+
+.partners > *{
+    padding: 0 5px;
+}

@@ -1,0 +1,93 @@
+header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(0deg, #770f0f, #530b51, #770f0f);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 15s ease infinite;
+    -moz-animation: AnimationName 15s ease infinite;
+    -o-animation: AnimationName 15s ease infinite;
+    animation: AnimationName 15s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 40%}
+    50%{background-position:100% 61%}
+    100%{background-position:0% 40%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 40%}
+    50%{background-position:100% 61%}
+    100%{background-position:0% 40%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 40%}
+    50%{background-position:100% 61%}
+    100%{background-position:0% 40%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 40%}
+    50%{background-position:100% 61%}
+    100%{background-position:0% 40%}
+}
+
+
+header > * {
+    width: 100%;
+}
+
+a {
+    color: #fff;
+}
+
+.wrapper {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #fff;
+    width: 1980px;
+    max-width: 1980px;
+    min-width: 370px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.wrapper > * {
+    height: 100%;
+}
+
+.wrapper .headerTop{
+    align-items: center;
+    width: 100%;
+    padding-top: 8px;
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapper {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .wrapper {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    header{
+        position: fixed;
+
+    }
+}

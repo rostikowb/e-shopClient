@@ -1,0 +1,45 @@
+/*@font-face {*/
+    /*font-family: 'Playfair';*/
+    /*font-style: normal;*/
+    /*font-weight: 400;*/
+    /*!*font-display: swap;*!*/
+    /*src: local('Playfair Regular'), local('Playfair-Regular'),*/
+    /*url(https://fonts.googleapis.com/css?family=Playfair+Display&display=swap);*/
+/*}*/
+
+.titleCard{
+    font-family: 'Playfair', serif;
+}
+
+.cardText{
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.cardDetailsBox{
+    /*width: 100%;*/
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end!important;
+    justify-content: center;
+    height: 100%;
+}
+
+.cardDetails{
+
+    margin: 0 0 15px 0;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    transition: all .2s;
+}
+
+.cardDetails:hover{
+    color: #000000;
+    border: 1px solid #000000;
+    transition: all .2s;
+}
+.cardText{
+    text-align: justify;
+    /*color: ;*/
+}

@@ -1,0 +1,51 @@
+.inputBox{
+    /*min-height: 200px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*border: 2px solid #222;*/
+    border-radius: 10%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.inputBox > *{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    margin: 10px 0;
+}
+
+.inputBox button{
+    background-color: #222;
+    border: 2px solid #090909;
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    min-width: 180px;
+    cursor: pointer;
+}
+.inputBox button > *{
+    color: white;
+}
+
+.inputBox label{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBox label > *{
+    padding: 5px 0;
+}
+
+.inputBox input{
+    border: 2px solid #090909;
+    padding: 10px;
+}
+
+.inputBox button:hover{
+    background-color: #696969;
+    transition: all .5s;
+}

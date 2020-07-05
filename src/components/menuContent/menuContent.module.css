@@ -1,0 +1,107 @@
+.mainMenuBox{
+    width: 100%;
+
+}
+.menu{
+    position: relative;
+    height: 40px;
+    /*padding-right: 10px;*/
+    /*padding-left: 10px;*/
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,.5);
+    background-color: rgba(255,255,255,0);
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    /*-webkit-transition: .2s ease-in-out;*/
+    /*-o-transition: .2s ease-in-out;*/
+    /*transition: all .2s ease-in-out;*/
+    margin-right: 2vw;
+    display: none;
+
+}
+
+.menu>*{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu > button{
+
+    position: relative;
+    height: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,.5);
+    background-color: rgba(255,255,255,0);
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    /*-webkit-transition: .2s ease-in-out;*/
+    /*-o-transition: .2s ease-in-out;*/
+    /*transition: all .2s ease-in-out;*/
+    outline: none;
+}
+
+.menu > button:focus{
+    outline: none;
+}
+.menu > button:hover{
+    background-color: rgba(255,255,255,.1);
+}
+
+.icon{
+    font-size: 25px;
+}
+
+.menuBox{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    background-color: #ebebeb;
+    height: 100%;
+}
+.mainMenuBox > *{
+    margin-bottom: 5px;
+    /*position: ;*/
+    /*background: linear-gradient(0deg, #770f0f, #530b51, #770f0f);*/
+}
+
+.menuBtnCls {
+    /*position: relative;*/
+    height: 50px;
+    padding-right: 10px;
+    padding-left: 10px;
+    /*border-radius: 3px;*/
+    border: none;
+    border-bottom: 2px solid rgb(107, 13, 104);
+    /*background-color: rgba(255,255,255,0);*/
+    white-space: nowrap;
+
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    /*-webkit-transition: .2s ease-in-out;*/
+    /*-o-transition: .2s ease-in-out;*/
+    /*transition: all .2s ease-in-out;*/
+    outline: none;
+
+}
+
+.menuBtnCls > *{
+    font-size: 36px;
+}
+
+@media (max-width: 1025px) {
+    .menuLogoBox{
+        display: flex;
+    }
+    .menu{
+        display: inline-block;
+    }
+}

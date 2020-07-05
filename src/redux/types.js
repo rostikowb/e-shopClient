@@ -1,0 +1,1 @@
+export const CHANGE_MODAL = 'AUTH_MODAL/ACTIVATE';

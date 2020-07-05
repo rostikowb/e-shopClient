@@ -1,0 +1,12 @@
+.contacts{
+    /*padding: 10px;*/
+}
+.contacts > *{
+    padding: 0 5px;
+}
+.contacts ul > *{
+    padding: 5px 0;
+}
+.contacts a{
+    color: white;
+}

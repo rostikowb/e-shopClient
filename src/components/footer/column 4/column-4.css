@@ -1,0 +1,26 @@
+.socialBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0;
+}
+.socialIcons > *{
+    padding: 5px 10px;
+}
+.socialBox > div > span{
+    color: #fff;
+}
+.social{
+    font-size: 48px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.social.facebook:hover{
+    color: #4267B2;
+}
+
+.social.instagram:hover{
+    color: #b9003c;
+}

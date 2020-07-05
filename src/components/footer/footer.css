@@ -1,0 +1,51 @@
+.wrapperFooter {
+    position: relative;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0 auto;
+    font-family: 'Old Standard TT', serif;
+}
+
+.wrapperFooter > div {
+
+}
+
+footer {
+    background-color: #222;
+    width: 100%;
+    color: #fff;
+    flex: 0 0 auto;
+}
+
+.upFooter {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100%;
+    max-height: 75%;
+
+}
+.upFooter > div {
+    margin: 10px 0 0 0;
+    width: 33%;
+}
+
+.downFooter {
+    width: 100%;
+    max-height: 25%;
+}
+
+/*@media screen and (max-width: 1080px) {*/
+    /*.upFooter{*/
+        /*flex-direction: column;*/
+        /*align-items: center;*/
+    /*}*/
+    /*.upFooter > div {*/
+        /*margin: 15px 0;*/
+    /*}*/
+/*}*/
