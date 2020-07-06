@@ -1,0 +1,27 @@
+.upperBar{
+    height: 35px;
+    background-color: #ebebeb;
+    border: 1px solid #c3c1bb;
+    margin: 5px;
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    font-size: 16px;
+    color: #282729;
+}
+
+@media (max-width: 800px) {
+    .upperBar{
+        flex-direction: column;
+        height: auto;
+    }
+    .upperBar > *{
+        margin: 5px 0;
+        width: 100%;
+    }
+}
+

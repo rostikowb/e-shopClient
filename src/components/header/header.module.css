@@ -85,9 +85,9 @@ a {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1025px) {
     header{
+        z-index: 4;
         position: fixed;
-
     }
 }

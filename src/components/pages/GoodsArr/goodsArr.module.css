@@ -1,11 +1,16 @@
 .goodsArr{
     width: 82vw;
     /*background-color: red;*/
-    height: 800px;
+    min-height: 600px;
 }
 
 .goodsBox{
     width: 100%;
+    position: relative;
+    /*border-right: 1px solid #e9e9e9;*/
+    /*border-bottom: 1px solid #e9e9e9;*/
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -14,7 +19,8 @@
 }
 
 .goodsBox > *{
-    background-color: #c1c1c1;
+    background-color: white;
+
     min-width: 180px;
     max-width: 95%;
     height: 400px;
@@ -24,7 +30,14 @@
     width: 16%;
 
 }
+.goodsBox > *:hover{
+    z-index: 3;
+}
 
+
+
+
+/*MEDIA AREA IS THIS!!!!!!!!*/
 @media (max-width: 1700px) {
     .goodsArr{
         width: 78vw;
@@ -69,8 +82,8 @@
 @media (max-width: 544px) {
 
     .goodsBox > *{
-        /*margin: 2vh .1vw;*/
-        width: 45%;
+        margin: 2vh .1vw;
+        width: 47%;
     }
 }
 

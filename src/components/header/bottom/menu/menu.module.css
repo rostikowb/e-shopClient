@@ -58,10 +58,12 @@
 .menuBox{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 50vw;
     background-color: #ebebeb;
     height: 100%;
 }
+
 .menuBox > *{
     margin-bottom: 5px;
     /*position: ;*/

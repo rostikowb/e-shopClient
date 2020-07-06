@@ -11,6 +11,7 @@ import clsx from 'clsx';
 import {makeStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
+import {TovZnk} from "../../../dopComp/tovZnk/tovZnk";
 
 
 const useStyles = makeStyles({
@@ -57,27 +58,17 @@ export default function TemporaryDrawer() {
         <div className={s.menu}>
             {['left'].map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <Button onClick={toggleDrawer(anchor, true)}><FontAwesomeIcon className={s.icon} icon={faBars}/></Button>
+                    <Button onClick={toggleDrawer(anchor, true)}><FontAwesomeIcon className={s.icon}
+                                                                                  icon={faBars}/></Button>
                     <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
                         {list(anchor)}
 
 
                         {/*------------------ТУТ МЕНЮ---------------------*/}
-
-
                         <div className={s.menuBox}>
-
-                        <Menu/>
-
-                            {/*<Logo/>*/}
-                            {/*<Auth/>*/}
-                            {/*<Info/>*/}
-                            {/*<Filter/>*/}
-                            {/*/!*<a style={{color:'black'}} href="#">ssssssss</a>*!/*/}
-
-                            {/*/!*<button className={s.menuBtnCls} onClick={toggleDrawer(anchor, false)}><FontAwesomeIcon className={s.icon} icon={faTimes} size={150} /></button>*!/*/}
+                            <Menu/>
+                            <TovZnk/>
                         </div>
-
 
                     </Drawer>
                 </React.Fragment>

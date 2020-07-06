@@ -1,13 +1,16 @@
 .mainBox{
     width: 18vw;
     background-color: #ebebeb;
-    height: 800px;
-    border-right: 1px solid #c3c1bb;
+    /*height: 500px;*/
+
+    border: 1px solid #c3c1bb;
+    /*transition: all 2s;*/
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 
 }
 
 .mainBox > *{
-    margin: 5px 0;
+    margin: 5px 0 200px 0;
 
 }
 
