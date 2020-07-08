@@ -9,9 +9,10 @@ import {GoodsArr} from './components/pages/GoodsArr/goodsArr'
 import Sidebar from './components/sidebar/sidebar'
 // import Footer from './components/footer/footer'
 import page404 from './components/statusCodePages/404/404'
-// import page500 from './components/statusCodePages/500/500'
+import page500 from './components/statusCodePages/500/500'
 import loader from './assets/img/loader.gif'
 import {config} from 'react-transition-group'
+import {Goods} from "./components/pages/goods/goods";
 // import {MainTop} from "./components/pages/GoodsArr/sortBar/sortBar";
 // import Switch from "react-router-dom/es/Switch";
 
@@ -40,8 +41,8 @@ class App extends Component {
                             <Switch>
 
 
-                                {/*<Route exact path="/news/:id" component={NewsPage}/>*/}
-                                {/*<Route exact path="/news/:id/500" component={page500}/>*/}
+                                <Route exact path="/goods/" component={Goods}/>
+                                <Route exact path="/news/:id/500" component={page500}/>
                                 <Route exact path="/" component={GoodsArr}/>
                                 {/*<Route exact path="/news" component={Content}/>*/}
                                 <Route exact path="/contact" component={ContactPage}/>

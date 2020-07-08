@@ -6,9 +6,10 @@ import {FilterContent} from "./filterContent";
 export const FilterBox = () => {
 
     return (
-        <Acordeon info={{
-            title: 'Фильтры',
-            content: <FilterContent/>
-        }}/>
+        <Acordeon
+            info={{
+                title: 'Фильтры',
+                content: <FilterContent/>
+            }}/>
     )
 };

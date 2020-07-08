@@ -23,7 +23,7 @@ export const Acordeon = (props)=>{
     const classes = useStyles();
     return(
         <div className={classes.root}>
-            <Accordion>
+            <Accordion TransitionProps={{ unmountOnExit: true }} >
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon/>}
                     aria-controls="panel1a-content"

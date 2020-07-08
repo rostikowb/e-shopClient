@@ -4,13 +4,8 @@
     height: 50px;
     width: 100%;
 
-    background: linear-gradient(0deg, #770f0f, #530b51, #770f0f);
-    background-size: 600% 600%;
-
-    -webkit-animation: AnimationName 15s ease infinite;
-    -moz-animation: AnimationName 15s ease infinite;
-    -o-animation: AnimationName 15s ease infinite;
-    animation: AnimationName 15s ease infinite;
+    background: linear-gradient(0deg, #770f0f, #530b51);
+    background-size: 90% 212%;
 }
 
 .menuLogoBox>img{
@@ -18,26 +13,6 @@
     /*width: 100%;*/
 }
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 40%}
-    50%{background-position:100% 61%}
-    100%{background-position:0% 40%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 40%}
-    50%{background-position:100% 61%}
-    100%{background-position:0% 40%}
-}
-@-o-keyframes AnimationName {
-    0%{background-position:0% 40%}
-    50%{background-position:100% 61%}
-    100%{background-position:0% 40%}
-}
-@keyframes AnimationName {
-    0%{background-position:0% 40%}
-    50%{background-position:100% 61%}
-    100%{background-position:0% 40%}
-}
 @media (max-width: 1025px) {
     .menuLogoBox{
         display: flex;

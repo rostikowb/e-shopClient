@@ -33,6 +33,13 @@ color: #ffffff;
 .basket{
     /*color: blue;*/
 }
+
+@media (max-width: 1025px) {
+    .actionBox {
+        height: 48px;
+    }
+}
+
 @media (max-width: 332px) {
     .actionBox {
         margin-left: 19vw;

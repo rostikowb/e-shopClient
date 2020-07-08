@@ -6,7 +6,8 @@ import {InfoContent} from './infoContent'
 
 export const Info = () => {
     return (
-        <Acordeon info={{
+        <Acordeon
+            info={{
             title: 'Полезная информация',
             content: <InfoContent/>
         }}/>

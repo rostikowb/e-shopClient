@@ -7,8 +7,10 @@ import Search from './searchInput/search'
 import Actions from './actions/actions'
 
 export default () => {
+    console.log(navigator.userAgent);
     return(
         <div className={s.headerBottom}>
+
             <MenuBtn/>
             <Logo/>
             <CatalogBtn/>

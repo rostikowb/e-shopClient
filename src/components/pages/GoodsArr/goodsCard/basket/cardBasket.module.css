@@ -14,7 +14,14 @@
     transition: all .2s;
     box-shadow: 0px 0px 1px 1px rgb(83, 11, 81);
 
-    background: linear-gradient(0deg, rgb(255, 16, 16), #530b51, rgb(116, 15, 15));
+    background: linear-gradient(0deg, rgb(145, 12, 12), #530b51, rgb(116, 15, 15));
+    background-size: 551% 129%;;
+
+}
+
+
+.cardBox:hover{
+    background: linear-gradient(45deg, rgb(255, 2, 2), #530b51, rgb(255, 43, 43));
     background-size: 600% 600%;
     -webkit-animation: AnimationName 3s ease infinite;
     -moz-animation: AnimationName 3s ease infinite;
