@@ -1,5 +1,6 @@
-.goodsBox{
-    width: 82vw;
-    /*width: 106vw;*/
-    min-height: 600px;
+.goodsBox {
+  width: 82vw;
+  /*width: 106vw;*/
+  min-height: 600px;
+  /*background-color: blue;*/
 }

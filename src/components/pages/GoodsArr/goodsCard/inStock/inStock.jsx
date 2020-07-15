@@ -1,11 +1,16 @@
-import s from './inStock.module.css'
-import React from 'react';
+import s from "./inStock.module.css";
+import React from "react";
 
-export const InStock = () => {
+export const InStock = (props) => {
+  let nal = props.stock;
 
-    return (
-        <div className={s.inStockBox}>
-            <span>В наличии</span>
-        </div>
-    );
+  return (
+    <div className={s.inStockBox}>
+      {nal > 3 ? (
+        <span className={s.nal}>В наличии 😅</span>
+      ) : (
+        <span className={s.notNal}>Нет в наличии 😫</span>
+      )}
+    </div>
+  );
 };

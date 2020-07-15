@@ -1,34 +1,26 @@
 import s from './shortHaract.module.css'
 import React from 'react';
 
-export const ShortHaractBox = () => {
+export const ShortHaractBox = props => {
+    // console.log(props);
+    let i = 0;
+    return <div className={s.shortHaractBox}>
 
-    return (
-        <div className={s.shortHaractBox}>
+        <ul>
+            {props.param?.map(item => {
+                i++;
+                if(i >= 8){
 
-            <ul>
-                <li>
-                    <span>Діагональ екрана: </span>
-                    <span>43</span>
-                </li>
-                <li>
-                    <span>Роздільна здатність: </span>
-                    <span>3840x2160</span>
-                </li>
-                <li>
-                    <span>Діапазони цифрового тюнера: </span>
-                    <span>DVB-S ¸  DVB-T2 ¸  DVB-T ¸  DVB-C</span>
-                </li>
-                <li>
-                    <span>Smart-платформа: </span>
-                    <span>Tizen</span>
-                </li>
-                <li>
-                    <span>Частота оновлення: </span>
-                    <span>1300 Гц (PQI)</span>
-                </li>
-            </ul>
+                }else {
+                    return (
+                        <li key={Math.random()}>
+                            <span>{item.name}: </span>
+                            <span> {item.value}</span>
+                        </li>
+                    )
+                }
+            })}
+        </ul>
 
-        </div>
-    );
+    </div>;
 };

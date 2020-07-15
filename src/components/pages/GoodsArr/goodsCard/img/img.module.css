@@ -1,13 +1,14 @@
 .imgBox{
     max-width: 100%;
     /*height: auto;*/
-    /*display: flex;*/
+    display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     /*height: 0;*/
     /*padding-top: 100%;*/
     /*position: relative;*/
-    display: block;
+    /*display: block;*/
     height: 243px;
 }
 

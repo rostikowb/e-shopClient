@@ -1,12 +1,14 @@
-import React from 'react'
-import s from './title.module.css'
+import React from "react";
+import s from "./title.module.css";
+import { NavLink } from "react-router-dom";
 
-export const Title = () => {
-    return (
-        <div className={s.title}>
-            <a href="">
-                <h3>Bluetooh наушники Hoco ES36 Original series White </h3>
-            </a>
-        </div>
-    )
+export const Title = (props) => {
+  // console.log(props.data.catalog);
+  return (
+    <div className={s.title}>
+      <NavLink to={props.data.catalog + "/" + props.data.link}>
+        <h3>{props.data.title} </h3>
+      </NavLink>
+    </div>
+  );
 };

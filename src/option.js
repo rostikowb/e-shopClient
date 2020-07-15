@@ -1,5 +1,30 @@
 export default {
-    api: 'http://localhost:3001',
-    // api: 'https://api.poap.pl.ua',
-    // domen: 'http://localhost:3000'
-}
+  api: "http://localhost:3001",
+  // api: 'https://api.poap.pl.ua',
+  // domen: 'http://localhost:3000'
+  GC: 59,
+  interest: 20,
+  goods: [
+    { value: "11900213", label: "Кабели синхронизации" },
+    { value: "11900214", label: "Чехлы" },
+    { value: "11900215", label: "Защитные стекла" },
+    { value: "11900217", label: "Проводные зарядки" },
+    { value: "11900220", label: "Моноподы для селфи" },
+    { value: "11900221", label: "Автодержатели" },
+    { value: "11900222", label: "Переходники" },
+    { value: "11900223", label: "Карты памяти" },
+    { value: "11900228", label: "Аккумы для смартфонов" },
+    { value: "11900211", label: "Наушники и гарнитуры" },
+    { value: "11900212", label: "Power Bank" },
+    { value: "11900216", label: "Блютуз колонки" },
+    { value: "11900219", label: "Беспроводные зарядки" },
+    { value: "11900233", label: "Чехлы для наушников" },
+    { value: "11900218", label: "Автомобильные ЗУ" },
+    { value: "11900224", label: "VR очки" },
+    { value: "11900226", label: "Сетевые удлинители" },
+    { value: "11900231", label: "Аксессуары для смарт-часов" },
+    { value: "11900232", label: "Джойстики, триггеры" },
+    { value: "11900234", label: "Увлажнители воздуха" },
+    { value: "11900235", label: "Лампы, свет" },
+  ],
+};

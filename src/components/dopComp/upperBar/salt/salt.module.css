@@ -1,12 +1,24 @@
-.saltBox{
-
+.saltBox {
 }
-
+.saltBox > * {
+  padding: 0 3px;
+}
+.saltBox span {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  /*text-transform: uppercase;*/
+  color: #282729;
+  cursor: pointer;
+}
+.saltBox span:hover {
+  color: #00cc9d;
+}
 @media (max-width: 800px) {
-    .saltBox{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-    }
+  .saltBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }

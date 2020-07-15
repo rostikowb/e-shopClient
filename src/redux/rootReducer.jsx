@@ -1,8 +1,10 @@
-import {combineReducers} from "redux";
-import auth from "./authReducer";
-import loginModal from "./loginModalReducer";
+import { combineReducers } from "redux";
+import modal from "./modal/reducer";
+import { AllGoodsR } from "./goodsArr/AllGoodsReducer";
+import { oneGoods } from "./oneGoods/reducer";
 
 export default combineReducers({
-    auth,
-    loginModal
-})
+  modal,
+  oneGoods,
+  AllGoodsR,
+});
