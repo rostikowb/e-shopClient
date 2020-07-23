@@ -1,5 +1,5 @@
 .goodsArr {
-  width: 82vw;
+  width: 100%;
   /*background-color: red;*/
   min-height: 600px;
 }
@@ -35,7 +35,7 @@
 /*MEDIA AREA IS THIS!!!!!!!!*/
 @media (max-width: 1700px) {
   .goodsArr {
-    width: 78vw;
+    /*width: 78vw;*/
   }
   .goodsBox > * {
     width: 19%;
@@ -50,7 +50,7 @@
 
 @media (max-width: 1050px) {
   .goodsArr {
-    width: 70vw;
+    /*width: 70vw;*/
   }
   .goodsBox > * {
     width: 31%;
@@ -59,7 +59,7 @@
 
 @media (max-width: 1025px) {
   .goodsArr {
-    width: 100vw;
+    /*width: 100vw;*/
   }
   .goodsBox > * {
     margin: 2vh 0.2vw;
@@ -69,20 +69,20 @@
 
 @media (max-width: 740px) {
   .goodsBox > * {
-    margin: 2vh 0.1vw;
+    /*margin: 2vh 0.1vw;*/
     width: 32%;
   }
 }
 @media (max-width: 544px) {
   .goodsBox > * {
-    margin: 2vh 0.1vw;
+    /*margin: 2vh 0.1vw;*/
     width: 47%;
   }
 }
 
 @media (max-width: 370px) {
   .goodsBox > * {
-    margin: 2vh 0.1vw;
+    /*margin: 2vh 0.1vw;*/
     width: 65%;
   }
 }

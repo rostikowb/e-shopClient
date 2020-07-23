@@ -4,6 +4,7 @@ import {
   FETCH_GOODS_PAGES,
   SET_CATALOG,
   STUB_ON,
+  STUB_ON_P,
   THIS_URL,
 } from "../types";
 
@@ -12,6 +13,7 @@ const initialState = {
   currGoods: [],
   catalog: null,
   stub: true,
+  stubP: false,
   url: "",
   sort: "random",
 };
@@ -21,7 +23,6 @@ export const AllGoodsR = (state = initialState, action) => {
     case FETCH_GOODS:
       if (action.sort) {
         state.sort = action.sort;
-        console.log(action.sort);
       }
       state.isFirstL = false;
       state.currGoods = action.payload;
@@ -33,6 +34,7 @@ export const AllGoodsR = (state = initialState, action) => {
       state.currGoods = [...new Set(state.currGoods.concat(action.payload))];
       state.catalog = action.catalog;
       state.stub = false;
+      state.stubP = false;
       state.isFirstL = false;
       return { ...state };
 
@@ -44,6 +46,11 @@ export const AllGoodsR = (state = initialState, action) => {
 
     case STUB_ON:
       state.stub = true;
+      // console.log("state.stub", state.stub);
+      return { ...state };
+
+    case STUB_ON_P:
+      state.stubP = true;
       return { ...state };
 
     case SET_CATALOG:

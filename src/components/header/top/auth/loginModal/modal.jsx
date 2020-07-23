@@ -1,25 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Login } from "../../../../dopComp/loginForm/login.jsx";
+import { AuthForm } from "../../../../dopComp/loginForm/AuthForm.jsx";
 import s from "./modal.module.css";
 import { changeStateAuthModal } from "../../../../../redux/modal/actions";
 
 const mapStateToProps = (state) => {
-  return { isActive: state.modal.auth };
+  return {
+    modal: state.modal.auth,
+    isLogin: state.auth.isLogin,
+  };
 };
 
-export default connect(mapStateToProps, { changeStateAuthModal })(
-  (isActive) => {
-    return isActive.isActive ? (
-      <div>
-        <div
-          onClick={() => isActive.changeStateAuthModal()}
-          className={s.modal_login_box}
-        />
-        <div className={s.modal_login}>
-          <Login />
-        </div>
+export default connect(mapStateToProps, { changeStateAuthModal })((props) => {
+  return props.modal ? (
+    <div>
+      <div
+        onClick={() => props.changeStateAuthModal()}
+        className={s.modal_login_box}
+      />
+      <div className={s.modal_login}>
+        <AuthForm />
       </div>
-    ) : null;
-  }
-);
+    </div>
+  ) : null;
+});

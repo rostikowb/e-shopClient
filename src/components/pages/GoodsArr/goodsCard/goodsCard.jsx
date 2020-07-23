@@ -12,43 +12,44 @@ import { CardBasketBox } from "./basket/cardBasket";
 import { ShortHaractBox } from "./shortHaract/shortHaract";
 
 export const GoodsCard = (props) => {
-  // console.log(props.data['stck_qntt'] > 5);
-  // console.log(props.data);
-  let link = props.data._id + "__" + props.data["nm"].replace(/\s/gi, "_");
+  let dt = props.data[0];
+  let isLike = props.data[1];
+  let dvnld = props.data[2];
+  let link = dt._id + "__" + dt["nm"].replace(/\s/gi, "_").replace(/\//gi, "-");
   return (
-    <Paper className={s.cardBox} elevation={3}>
+    <Paper className={!isLike ? s.cardBox : s.cardBoxLite} elevation={3}>
       <div className={s.goodsInner}>
         <div className={s.top}>
           <LazyLoad once height={200} offset={100}>
             <Img
               data={{
-                img: props.data.img,
+                data: dt,
                 link: link,
-                catalog: props.data["ctgrId"],
+                download: dvnld,
               }}
             />
           </LazyLoad>
           <Title
             data={{
-              title: props.data["nm"],
+              data: dt,
               link: link,
-              catalog: props.data["ctgrId"],
+              download: dvnld,
             }}
           />
           <RatingBox />
         </div>
 
         <div className={s.bottom}>
-          <PriceBox price={props.data["prc"]} />
-          <InStock stock={props.data["stck_qntt"]} />
+          <PriceBox price={[dt["rtlPrc"], dt["dscnt"]]} />
+          <InStock stock={dt["stck_qntt"]} />
         </div>
         <div className={s.underInfo}>
-          <ShortHaractBox id={props.data._id} param={props.data["prm"]} />
+          <ShortHaractBox id={dt._id} param={dt["prm"]} />
         </div>
-        {props.data["stck_qntt"] > 3 ? null : <div className={s.notAval} />}
+        {dt["stck_qntt"] > 0 ? null : <div className={s.notAval} />}
       </div>
-      <CardLikeBox />
-      {props.data["stck_qntt"] > 3 ? <CardBasketBox /> : null}
+      <CardLikeBox data={dt} />
+      {dt["stck_qntt"] > 0 ? <CardBasketBox data={dt} /> : null}
     </Paper>
   );
 };

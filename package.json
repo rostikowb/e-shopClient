@@ -19,6 +19,7 @@
     "draft-js": "^0.11.6",
     "draftjs-to-html": "^0.9.1",
     "form-data": "latest",
+    "localforage": "^1.7.4",
     "material-ui": "^0.20.2",
     "moment": "^2.27.0",
     "q": "^1.5.1",

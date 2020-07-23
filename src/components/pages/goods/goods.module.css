@@ -1,6 +1,19 @@
 .goodsBox {
-  width: 82vw;
+  width: 100%;
+  /*position: relative;*/
   /*width: 106vw;*/
-  min-height: 600px;
-  /*background-color: blue;*/
+  /*min-height: 600px;*/
+}
+.goodsInfo {
+  /*background-color: white;*/
+  margin: 0 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.descCharComBox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-top: 2px solid #e8e8e8;
 }

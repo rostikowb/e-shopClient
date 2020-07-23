@@ -6,7 +6,7 @@ export const InStock = (props) => {
 
   return (
     <div className={s.inStockBox}>
-      {nal > 3 ? (
+      {nal > 0 ? (
         <span className={s.nal}>В наличии 😅</span>
       ) : (
         <span className={s.notNal}>Нет в наличии 😫</span>

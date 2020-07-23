@@ -7,7 +7,7 @@ import s from "./nextBtnCard.module.css";
 import ss from "../goodsArr.module.css";
 import { NavLink } from "react-router-dom";
 import { useLocation, useParams } from "react-router";
-import { FETCH_GOODS, STUB_ON } from "../../../../redux/types";
+import { FETCH_GOODS, STUB_ON, STUB_ON_P } from "../../../../redux/types";
 import { fetchGoods, stubOn } from "../../../../redux/goodsArr/actions";
 
 function useLoc() {
@@ -22,7 +22,7 @@ const NextBtnCar = (props) => {
   let page = Number(locat.query.get("page")) + 1;
   let sort = props.sort;
   const loadGoods = () => {
-    props.stubOn({ type: STUB_ON });
+    props.stubOn({ type: STUB_ON_P });
     props.fetchGoods({
       type: FETCH_GOODS,
       sort: sort,

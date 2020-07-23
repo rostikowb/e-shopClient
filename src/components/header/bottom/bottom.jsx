@@ -5,14 +5,23 @@ import MenuBtn from "./menu/menu";
 import Logo from "./logo/logo";
 import CatalogBtn from "./catalog/catalogBtn/catalogBtn";
 import Search from "./searchInput/search";
-import Actions from "./actions/actions";
+import { Actions } from "./actions/actions";
 import { CatalogModal } from "./catalog/catalogModal/catalogModal";
 import { changeStateCatalogModal } from "../../../redux/modal/actions";
+import { LikesModal } from "./actions/likesModal/likesModal";
+import { BasketModal } from "./actions/basketModal/basketModal";
 
-export const Bottom = connect(null, {
+const mapStateToProps = (state) => {
+  return {
+    like: state.modal.like,
+    basket: state.modal.basket,
+    catalog: state.modal.catalog,
+  };
+};
+
+export const Bottom = connect(mapStateToProps, {
   changeStateCatalogModal,
-})((isActive) => {
-  // console.log(navigator.userAgent);
+})((props) => {
   return (
     <div className={s.headerBottom}>
       <MenuBtn />
@@ -20,7 +29,9 @@ export const Bottom = connect(null, {
       <CatalogBtn />
       <Search />
       <Actions />
-      {isActive ? <CatalogModal /> : null}
+      {props.catalog ? <CatalogModal /> : null}
+      {props.like ? <LikesModal /> : null}
+      {props.basket ? <BasketModal /> : null}
     </div>
   );
 });

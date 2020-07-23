@@ -1,15 +1,21 @@
-import { PRODUCT } from "../types";
+import { PRODUCT, SET_IMG } from "../types";
 import bent from "bent";
 
-export const fetchOneGoods = (props) => {
-  let url = "http://192.168.1.106:3001/goods/" + props;
+export const imgOnShowSet = (img) => {
+  return { type: SET_IMG, img: img };
+};
+
+export const fetchOneGoods = (urlId, isLoad = true, data) => {
+  let url = "http://192.168.1.106:3001/goods/" + urlId;
 
   return async (dispatch) => {
-    const res = await bent(url, "string", "POST", 200)();
+    let res = isLoad
+      ? JSON.parse(await bent(url, "string", "POST", 200)())
+      : data;
 
     let dispatchObj = {
       type: PRODUCT,
-      payload: JSON.parse(res),
+      payload: res,
     };
     dispatch(dispatchObj);
   };

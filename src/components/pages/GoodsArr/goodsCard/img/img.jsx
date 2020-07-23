@@ -1,40 +1,44 @@
 import React from "react";
 import s from "./img.module.css";
-// import img1 from "./1.jpg";
-// import img2 from "./2.jpg";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { fetchOneGoods } from "../../../../../redux/oneGoods/action";
+import { setCatalog } from "../../../../../redux/goodsArr/actions";
+import { changeStateLikeModal } from "../../../../../redux/modal/actions";
 
-export const Img = (props) => {
+const Im = (props) => {
+  let d = props.data.data;
+  let link = props.data.link;
+  let dvnld = props.data.download;
+
   let styleImg1 = {
     display: "",
   };
   let styleImg2 = {
     display: "",
   };
-  if (props.data?.img.length < 2) {
+  if (d?.img.length < 2) {
     styleImg1.display = "block";
     styleImg2.display = "none";
   }
 
+  const loadOneGoods = () => {
+    props.setCatalog(d["ctgrId"]);
+    props.fetchOneGoods(d["_id"], false, d);
+    props.changeStateLikeModal();
+  };
+
   return (
-    <div>
-      <Link
-        className={s.imgBox}
-        to={props.data.catalog + "/" + props.data.link}
-      >
-        <img
-          style={styleImg1}
-          className={s.imgOne}
-          src={props.data?.img[0]}
-          alt=""
-        />
-        <img
-          style={styleImg2}
-          className={s.imgTwo}
-          src={props.data?.img[1]}
-          alt=""
-        />
+    <div onClick={() => (dvnld ? loadOneGoods() : null)}>
+      <Link className={s.imgBox} to={`/${d["ctgrId"]}/${link}`}>
+        <img style={styleImg1} className={s.imgOne} src={d?.img[0]} alt="" />
+        <img style={styleImg2} className={s.imgTwo} src={d?.img[1]} alt="" />
       </Link>
     </div>
   );
 };
+export const Img = connect(null, {
+  fetchOneGoods,
+  setCatalog,
+  changeStateLikeModal,
+})(Im);

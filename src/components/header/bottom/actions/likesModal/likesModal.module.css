@@ -1,0 +1,26 @@
+.modal_liked_box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(68, 68, 68, 0.31);
+  z-index: 15;
+}
+
+.modal_liked {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 0 -50% 0 0;
+  transform: translate(-50%, -50%);
+  width: 69vw;
+  height: 77vh;
+  background-color: white;
+  /*background: linear-gradient(0deg, rgba(245, 0, 226, 0.11), rgba(0, 138, 255, 0.1));*/
+  border-radius: 8px;
+  z-index: 16;
+  transition: all 1s;
+  color: black;
+  overflow: auto;
+}

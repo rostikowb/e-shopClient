@@ -10,10 +10,10 @@ const GoodsArrLoa = (props) => {
       {/*Кількість блоків повинна бути кратна ---24---*/}
       {props.currGoods.map((value) => (
         <li className={s.goodsElem} key={value["_id"]}>
-          <GoodsCard data={value} />
+          <GoodsCard data={[value]} />
         </li>
       ))}
-      {!props.stub ? <NextBtnCard /> : null}
+      {!props.stubP ? <NextBtnCard /> : null}
     </>
   );
 };
@@ -21,7 +21,7 @@ const mapStateToProps = (state) => {
   return {
     currGoods: state.AllGoodsR.currGoods,
     catalog: state.AllGoodsR.catalog,
-    stub: state.AllGoodsR.stub,
+    stubP: state.AllGoodsR.stubP,
   };
 };
 

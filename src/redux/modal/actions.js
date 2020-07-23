@@ -1,4 +1,9 @@
-import { CHANGE_AUTH_MODAL, CHANGE_CATALOG_MODAL } from "../types";
+import {
+  CHANGE_AUTH_MODAL,
+  CHANGE_BASKET_MODAL,
+  CHANGE_CATALOG_MODAL,
+  CHANGE_LIKE_MODAL,
+} from "../types";
 
 export const changeStateAuthModal = () => {
   return {
@@ -9,5 +14,17 @@ export const changeStateAuthModal = () => {
 export const changeStateCatalogModal = () => {
   return {
     type: CHANGE_CATALOG_MODAL,
+  };
+};
+
+export const changeStateLikeModal = () => {
+  return {
+    type: CHANGE_LIKE_MODAL,
+  };
+};
+
+export const changeStateBasketModal = () => {
+  return {
+    type: CHANGE_BASKET_MODAL,
   };
 };

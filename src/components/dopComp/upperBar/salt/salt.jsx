@@ -4,27 +4,18 @@ import { NavLink } from "react-router-dom";
 import { FETCH_GOODS, STUB_ON } from "../../../../redux/types";
 import { connect } from "react-redux";
 import { fetchGoods, stubOn } from "../../../../redux/goodsArr/actions";
-// import { useLocation } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGhost } from "@fortawesome/free-solid-svg-icons/index";
 import opt from "../../../../option";
 
-// function useLoc() {
-//   return {
-//     query: new URLSearchParams(useLocation().search),
-//     path: useLocation().pathname,
-//   };
-// }
-
 export const Sal = (props) => {
-  let catalogLabel = props.catalog
-    ? opt.goods.find((e) => e.value === props.catalog).label
-    : null;
   // console.log(props.catalog);
-  // let path = useLoc().path;
+  let catalogLabel = props.catalog
+    ? opt.goods.find((e) => e.value === props.catalog.toString()).label
+    : null;
+
   const mainPage = () => {
-    // console.log(props.sort);
-    // props.stubOn({ type: STUB_ON });
+    props.stubOn({ type: STUB_ON });
     props.fetchGoods({ type: FETCH_GOODS, catalog: null, sort: props.sort });
   };
 
@@ -50,7 +41,7 @@ export const Sal = (props) => {
       {props?.name ? (
         <>
           <FontAwesomeIcon className={s.icon} icon={faGhost} />{" "}
-          <span>{props.name} </span>
+          <span className={s.goodsName}>{props.name} </span>
         </>
       ) : null}
     </div>
