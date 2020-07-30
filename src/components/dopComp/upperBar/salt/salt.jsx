@@ -6,12 +6,12 @@ import { connect } from "react-redux";
 import { fetchGoods, stubOn } from "../../../../redux/goodsArr/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGhost } from "@fortawesome/free-solid-svg-icons/index";
-import opt from "../../../../option";
+import { option } from "../../../../option";
 
 export const Sal = (props) => {
   // console.log(props.catalog);
   let catalogLabel = props.catalog
-    ? opt.goods.find((e) => e.value === props.catalog.toString()).label
+    ? option.goods.find((e) => e.value === props.catalog.toString()).label
     : null;
 
   const mainPage = () => {

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import s from "./basketModal.module.css";
-import ss from "../../../../pages/GoodsArr/goodsCard/basket/cardBasket.module.css";
 import { connect } from "react-redux";
 import { changeStateBasketModal } from "../../../../../redux/modal/actions";
 import { BasketCart } from "./basket/basketCard";
+import { SumInf } from "./dopInf/dopInf";
 
 export const BasketModa = (props) => {
   let mdl = props.basket;
@@ -31,14 +31,7 @@ export const BasketModa = (props) => {
           )}
         </ul>
         {arr?.length ? (
-          <div className={s.suma}>
-            <span className={s.sumaText}>
-              В суме: <span>{props.basketSum.toLocaleString("ru-RU")}</span>
-            </span>
-            <span className={s.sumaBtn + " " + ss.cardBoxAll}>
-              Пройти на касу!
-            </span>
-          </div>
+          <SumInf data={[props.basketSum.count, props.basketSum.sum]} />
         ) : null}
       </div>
     </div>

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBoxes } from "@fortawesome/free-solid-svg-icons/index";
 import s from "./stubArr.module.css";
 import sParent from "../goodsArr.module.css";
-import option from "../../../../option";
+import { option } from "../../../../option";
 
 export const StubArr = () => {
   return (

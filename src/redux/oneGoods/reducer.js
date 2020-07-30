@@ -13,11 +13,11 @@ const addVisitedArr = (state, value) => {
     return state;
   }
 };
-
+let visArr = get("goods/visited");
 const initialState = {
   product: null,
   imgOnShow: null,
-  visitedArr: get("goods/visited"),
+  visitedArr: visArr?.length ? visArr : set("goods/visited", ""),
 };
 
 export const oneGoods = (state = initialState, action) => {

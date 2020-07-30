@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import s from "./catalogModal.module.css";
 import { fetchGoods, stubOn } from "../../../../../redux/goodsArr/actions";
 import { NavLink } from "react-router-dom";
-import { useLocation } from "react-router";
-import opt from "../../../../../option";
+import { option } from "../../../../../option";
 import { FETCH_GOODS, STUB_ON } from "../../../../../redux/types";
 import { changeStateCatalogModal } from "../../../../../redux/modal/actions";
 
@@ -31,6 +30,7 @@ export const CatalogModal = connect(mapStateToProps, {
       sort: props.sort,
     });
   };
+  let opt = option;
   return props.isActive ? (
     <div>
       <div

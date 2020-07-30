@@ -1,4 +1,8 @@
-.authBtn{
-    cursor: pointer;
-    padding: 1px;
+.authBtn {
+  cursor: pointer;
+  padding: 1px;
+}
+.exitBtn {
+  text-decoration: underline;
+  cursor: pointer;
 }

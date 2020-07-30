@@ -13,6 +13,8 @@ import { config } from "react-transition-group";
 import { Goods } from "./components/pages/goods/goods";
 import { GoodsSideBar } from "./components/dopComp/goodsSideBar/goodsSideBar";
 import { initLocalStorage } from "./localStorage/localStorFunc";
+import { Checkout } from "./components/pages/checkout/checkout";
+import { GoodsRoute } from "./components/routes/goods";
 // import {MainTop} from "./components/pages/GoodsArr/sortBar/sortBar";
 // import Switch from "react-router-dom/es/Switch";
 
@@ -53,36 +55,11 @@ class App extends Component {
               </div>
             }
           >
-            <Header />
-            <div className="main">
-              <div className="leftSidebarBox">
-                <Sidebar />
-              </div>
-
-              <div className="rightMain">
-                <Switch>
-                  <Route
-                    exact
-                    path="/:catalog/:product/500"
-                    component={page500}
-                  />
-                  <Route exact path="/" component={GoodsArr} />
-                  <Route exact path="/:catalog" component={GoodsArr} />
-                  <Route exact path="/:catalog/:product" component={Goods} />
-                  {/*<Route exact path="/news" component={Content}/>*/}
-                  {/*<Route exact path="/contact" component={ContactPage} />*/}
-                  {/*<Route exact path="/statut" component={StatutPage} />*/}
-                  {/*<Route exact path="/ap" component={AdminPanel} />*/}
-                  {/*<Route exact path="/addNews" component={AddNewsPage}/>*/}
-
-                  {/*<Route exact path="/" component={Content}/>*/}
-                  <Route exact component={page404} />
-                </Switch>
-              </div>
-            </div>
-
-            <GoodsSideBar />
-            {/*<Footer func={this.handleClick}/>*/}
+            <Switch>
+              <Route path="/checkout" component={Checkout} />
+              <Route path="/" component={GoodsRoute} />
+              <Route component={page404} />
+            </Switch>
           </React.Suspense>
         </Router>
       </div>

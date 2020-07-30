@@ -11,16 +11,18 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { changeStateAuthModal })((props) => {
-  return props.modal ? (
-    <div>
-      <div
-        onClick={() => props.changeStateAuthModal()}
-        className={s.modal_login_box}
-      />
-      <div className={s.modal_login}>
-        <AuthForm />
+export const ModalAuth = connect(mapStateToProps, { changeStateAuthModal })(
+  (props) => {
+    return props.modal ? (
+      <div>
+        <div
+          onClick={() => props.changeStateAuthModal()}
+          className={s.modal_login_box}
+        />
+        <div className={s.modal_login}>
+          <AuthForm />
+        </div>
       </div>
-    </div>
-  ) : null;
-});
+    ) : null;
+  }
+);

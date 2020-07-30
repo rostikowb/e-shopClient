@@ -5,6 +5,7 @@ import {
   THIS_URL,
 } from "../types";
 import bent from "bent";
+import { option } from "../../option";
 
 export const stubOn = (type) => {
   return {
@@ -33,8 +34,7 @@ export const fetchGoods = (props) => {
   // console.log(cat);
   let page = props.page;
   let sort = props.sort ? props.sort : null;
-  let url =
-    "http://192.168.1.106:3001" + cat + "?page=" + page + "&sort=" + sort;
+  let url = option.api + cat + "?page=" + page + "&sort=" + sort;
   let isFetch;
 
   oldUrl = url;
