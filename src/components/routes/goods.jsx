@@ -1,4 +1,5 @@
 import React from "react";
+import s from "./goods.module.css";
 import Header from "../header/header";
 import { GoodsSideBar } from "../dopComp/goodsSideBar/goodsSideBar";
 import Sidebar from "../sidebar/sidebar";
@@ -11,10 +12,10 @@ export const GoodsRoute = () => {
     <>
       <Header />
       <div className="main">
-        <div className="leftSidebarBox">
+        <div className={s.leftSidebarBox}>
           <Sidebar />
         </div>
-        <div className="rightMain">
+        <div className={s.rightMain}>
           <Switch>
             <Route exact path={["/", "/:catalog"]} component={GoodsArr} />
             <Route path="/:catalog/:product" component={Goods} />

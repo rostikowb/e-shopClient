@@ -23,3 +23,7 @@ export const FORM_CHANGE = "AUTH/CHANGE_FORM";
 export const AUTH_STUB = "AUTH/STUB_CHANGE";
 export const AUTH_API = "AUTH/AUTH_API_SEND";
 export const AUTH_EXIT = "AUTH/EXIT";
+// export const CHE_CITY = "CHECKOUT/GET_OPT_CITY_NP";
+// export const CHE_BRANCH = "CHECKOUT/GET_OPT_BRANCH_N_NP";
+export const CHE_OPT = "CHECKOUT/GET_OPT_NP";
+export const OPT_STUB = "CHECKOUT/ON_OPT_STUB_NP";

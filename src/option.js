@@ -2,8 +2,13 @@ export const option = {
   api: "http://localhost:3001",
   // api: 'https://api.poap.pl.ua',
   // domen: 'http://localhost:3000'
+  // goodsCount
   GC: 59,
+
+  // procent skidki
   interest: 20,
+  // nova poshta keyAPI
+  NPkey: "81bf0c9eeec4d3e5ab728de8fbdfc52e",
   goods: [
     { value: "11900213", label: "Кабели синхронизации" },
     { value: "11900214", label: "Чехлы" },

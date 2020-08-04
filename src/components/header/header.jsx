@@ -5,7 +5,7 @@ import s from "./header.module.css";
 
 export default function Header() {
   return (
-    <header>
+    <header className={s.header}>
       <div className={s.wrapper}>
         <Top />
         <Bottom />

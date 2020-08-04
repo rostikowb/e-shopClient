@@ -13,7 +13,7 @@ let initialState = {
   userData: {
     nick: user?.nick,
     email: user?.email,
-    number: user?.number,
+    tel: user?.tel,
     name: {
       first: user?.name?.first,
       last: user?.name?.last,
@@ -47,10 +47,10 @@ export const auth = (state = initialState, action) => {
       return { ...state };
 
     case AUTH_EXIT:
-      state.userData = initialState.userData;
-      state.token = initialState.token;
       set("auth/token", "");
       set("auth/userData", "");
+      state.userData = initialState.userData;
+      state.token = "";
       return { ...state };
 
     default:

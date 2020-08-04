@@ -208,6 +208,7 @@ const mapStateToProps = (state) => {
     isForm: state.auth.isForm,
     stub: state.auth.stub,
     invalid: state.auth.invalid,
+    token: state.auth.token,
   };
 };
 

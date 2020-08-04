@@ -1,10 +1,11 @@
 .modal_catalog {
   position: fixed;
-  top: 9%;
+  top: 18%;
   left: 24%;
   width: auto;
   height: auto;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 20px 5px rgba(68, 68, 68, 0.7);
   /*background: linear-gradient(0deg, rgba(245, 0, 226, 0.11), rgba(0, 138, 255, 0.1));*/
   border-radius: 8px;
   z-index: 11;

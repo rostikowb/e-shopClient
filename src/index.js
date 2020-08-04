@@ -8,6 +8,9 @@ import { compose, createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import { Provider } from "react-redux";
 import rootReducer from "./redux/rootReducer";
+import { MuiThemeProvider } from "material-ui";
+import { ruRU } from "@material-ui/core/locale";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 const store = createStore(
   rootReducer,
@@ -16,9 +19,15 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
+
+const theme = createMuiTheme({}, ruRU);
 const app = (
   <Provider store={store}>
-    <App />
+    <MuiThemeProvider>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </MuiThemeProvider>
   </Provider>
 );
 

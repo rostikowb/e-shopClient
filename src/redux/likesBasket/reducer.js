@@ -52,8 +52,10 @@ const sumArrDo = (state) => {
 
   return { count, sum };
 };
+
 let likesArr = get("goods/likes");
 let basketArr = get("goods/basket");
+
 const initialState = {
   // visitedArr: visArr?.length ? visArr : set("goods/visited", ""),
   likesArr: likesArr?.length ? likesArr : set("goods/likes", ""),

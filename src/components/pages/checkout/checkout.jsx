@@ -8,16 +8,20 @@ import { CheckoutInfo } from "./info/info";
 
 const Checkou = (props) => {
   return (
-    <div className={`main ${s.wrapper}`}>
-      <div className={s.header}>
-        <NavLink to={`/`}>Вернутся на главную</NavLink>
-        <NavLink to={`/`}>Контакты</NavLink>
+    <>
+      <header className={s.header}>
+        <div className={s.headerWrapper}>
+          <NavLink to={`/`}>Вернутся на главную</NavLink>
+          <NavLink to={`/`}>Контакты</NavLink>
+        </div>
+      </header>
+      <div className={`main ${s.wrapper}`}>
+        <div className={s.content}>
+          <CheckoutForm />
+          <CheckoutInfo />
+        </div>
       </div>
-      <div className={s.content}>
-        <CheckoutForm />
-        <CheckoutInfo />
-      </div>
-    </div>
+    </>
   );
 };
 

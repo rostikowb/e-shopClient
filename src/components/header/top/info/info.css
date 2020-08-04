@@ -1,9 +1,0 @@
-ul{
-    display: flex;
-    flex-direction: row;
-
-}
-
-ul > li{
-    margin: 0 10px 0 0;
-}
