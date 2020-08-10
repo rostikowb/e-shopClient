@@ -1,5 +1,5 @@
 import { set, get, contains } from "../../localStorage/localStorFunc";
-import { PRODUCT, SET_IMG } from "../types";
+import { COMMENTS_ERROR, PRODUCT, SET_IMG } from "../types";
 
 const addVisitedArr = (state, value) => {
   if (!contains(state, value)) {
@@ -18,13 +18,16 @@ const initialState = {
   product: null,
   imgOnShow: null,
   visitedArr: visArr?.length ? visArr : set("goods/visited", ""),
+  commErrMsg: null,
 };
 
 export const oneGoods = (state = initialState, action) => {
   switch (action.type) {
     case PRODUCT:
+      // console.log(action.payload);
       if (!state.visitedArr) state.visitedArr = get("goods/visited");
-      state.product = action.payload;
+      // if(!action.payload?.comments?.length) action.payload?.comments = false;
+      if (action.payload) state.product = action.payload;
       state.imgOnShow = action.payload.img[0];
       state.visitedArr = addVisitedArr(state.visitedArr, action.payload);
       set("goods/visited", state.visitedArr);
@@ -32,6 +35,10 @@ export const oneGoods = (state = initialState, action) => {
 
     case SET_IMG:
       if (state.imgOnShow !== action.img) state.imgOnShow = action.img;
+      return { ...state };
+
+    case COMMENTS_ERROR:
+      if (action.msg) state.commErrMsg = action.msg;
       return { ...state };
 
     default:

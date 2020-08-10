@@ -2,6 +2,7 @@ import {
   CHANGE_AUTH_MODAL,
   CHANGE_BASKET_MODAL,
   CHANGE_CATALOG_MODAL,
+  CHANGE_COMMENTS_MODAL,
   CHANGE_LIKE_MODAL,
 } from "../types";
 
@@ -10,6 +11,7 @@ const initialState = {
   catalog: false,
   like: false,
   basket: false,
+  comments: false,
 };
 
 export default (state = initialState, action) => {
@@ -22,6 +24,8 @@ export default (state = initialState, action) => {
       return { ...state, like: !state.like };
     case CHANGE_BASKET_MODAL:
       return { ...state, basket: !state.basket };
+    case CHANGE_COMMENTS_MODAL:
+      return { ...state, comments: !state.comments };
     default:
       return state;
   }

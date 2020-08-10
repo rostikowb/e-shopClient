@@ -1,6 +1,10 @@
-import { CHE_OPT, OPT_STUB } from "../types";
+import { CHE_OPT, OPT_DONE, OPT_SEND_STUB, OPT_STUB } from "../types";
 
 let initialState = {
+  stub: false,
+  isDoneSend: false,
+  msg: "",
+  invalid: false,
   city: {
     stub: false,
     arr: [],
@@ -30,9 +34,22 @@ export const checkout = (state = initialState, action) => {
       }
       return { ...state };
 
+    case OPT_DONE:
+      if (action.invalid) {
+        state.invalid = action.invalid;
+        state.msg = action.res;
+      } else {
+        state.isDoneSend = !!action.res;
+      }
+      return { ...state };
+
     case OPT_STUB:
       state.city.stub = true;
       state.branchN.stub = true;
+      return { ...state };
+
+    case OPT_SEND_STUB:
+      state.stub = false;
       return { ...state };
 
     default:

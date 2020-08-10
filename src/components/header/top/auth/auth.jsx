@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, { changeStateAuthModal, authExit })(
   (props) => {
-    let nick = props.user.nick;
+    let FN = props?.user?.FN;
     return (
       <div>
         {!props.token ? (
@@ -29,7 +29,7 @@ export default connect(mapStateToProps, { changeStateAuthModal, authExit })(
           </>
         ) : (
           <span>
-            Привет {nick ? nick : "Аноним"}!{" "}
+            Привет {FN ? FN : "Аноним"}!{" "}
             <span className={s.exitBtn} onClick={() => props.authExit()}>
               Выход
             </span>

@@ -1,4 +1,10 @@
-import { AUTH_API, AUTH_EXIT, AUTH_STUB, FORM_CHANGE } from "../types";
+import {
+  AUTH_API,
+  AUTH_EXIT,
+  AUTH_STUB,
+  AUTH_UPDATE,
+  FORM_CHANGE,
+} from "../types";
 import bent from "bent";
 import { option } from "../../option";
 
@@ -25,6 +31,7 @@ export const authExit = () => {
     });
   };
 };
+
 export const authSendApi = (type, data) => {
   return async (dispatch) => {
     const res = await bent(
@@ -34,7 +41,7 @@ export const authSendApi = (type, data) => {
       "json",
       200
     )("/users/" + type, {
-      nick: data.name,
+      FN: data.name,
       email: data.email,
       pass: data.pass,
     });
@@ -42,7 +49,23 @@ export const authSendApi = (type, data) => {
     dispatch({
       type: AUTH_API,
       payload: res,
-      userData: res.userData,
+      userData: res.UD,
+    });
+  };
+};
+export const authUpdateUD = (token) => {
+  return async (dispatch) => {
+    const res = await bent(
+      option.api,
+      "string",
+      "POST",
+      "json",
+      200
+    )("/users/read", {}, { authorization: token });
+    // console.log(res);
+    dispatch({
+      type: AUTH_UPDATE,
+      payload: res,
     });
   };
 };

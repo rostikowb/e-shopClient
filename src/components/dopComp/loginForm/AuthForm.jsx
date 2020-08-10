@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
+import { TextField, Container, makeStyles, Button } from "@material-ui/core";
 import s from "./login.module.css";
 import { connect } from "react-redux";
 import {

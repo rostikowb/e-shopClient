@@ -10,8 +10,13 @@ import {
 import { Autocomplete } from "@material-ui/lab";
 import { connect } from "react-redux";
 import { changeStateAuthModal } from "../../../../redux/modal/actions";
-import { optStubOn, searchCityNP } from "../../../../redux/checkout/actions";
+import {
+  optStubOn,
+  searchCityNP,
+  sendToDB,
+} from "../../../../redux/checkout/actions";
 import s from "./form.module.css";
+import { OPT_SEND_STUB, OPT_STUB } from "../../../../redux/types";
 
 const validateEmail = (email) => {
   let pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -42,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CheckoutFor = (props) => {
-  const auMo = props.changeStateAuthModal;
+  const arr = props.basketArr;
   const classes = useStyles();
   const stub = props.stub;
   const errMsg = props.invalid;
@@ -53,12 +58,13 @@ const CheckoutFor = (props) => {
   const [done, setDone] = useState(false);
   const [isReg, setIsReg] = useState(!token);
   const [data, setData] = useState({
+    userId: UD.userId || "",
     email: UD.email || "",
     tel: UD.tel || Number("+380"),
     pass: "",
-    FN: UD.name.first || UD.nick || "",
-    LN: UD.name.last || "",
-    SN: UD.name.surname || "",
+    FN: UD.FN || UD.FN || "",
+    LN: UD.LN || "",
+    SN: UD.SN || "",
     optCity: UD.city || "",
     optBranchN: UD.branchN || "",
   });
@@ -74,9 +80,19 @@ const CheckoutFor = (props) => {
     iAgree: false,
   });
 
-  const sendData = (type) => {
-    // props.authStubOn();
-    // props.authSendApi(type, data);
+  const sendData = () => {
+    let obj = {
+      UD: data,
+      goods: arr.map((g) => {
+        return {
+          goodsId: g._id,
+          count: g.countSale,
+          price: Math.round(g["rtlPrc"] - (g["rtlPrc"] / 100) * g["dscnt"]),
+        };
+      }),
+    };
+    props.optStubOn(OPT_SEND_STUB);
+    props.sendToDB(obj, token);
   };
 
   const chngInpLn = (type, value, lng) => {
@@ -94,12 +110,11 @@ const CheckoutFor = (props) => {
 
   const sityChange = (value) => {
     if (value) {
-      props.optStubOn();
+      props.optStubOn(OPT_STUB);
       props.searchCityNP(value);
       data.optCity = value;
       setData({ ...data });
     }
-    // console.log("sityChange", value);
   };
 
   const branchNChange = (value) => {
@@ -107,7 +122,6 @@ const CheckoutFor = (props) => {
       data.optBranchN = value;
       setData({ ...data });
     }
-    // console.log("branchNChange", value);
   };
 
   const checkboxChange = (value = false) => {
@@ -139,18 +153,13 @@ const CheckoutFor = (props) => {
       setDataV({ ...dataV });
     }
   }, [data, isReg]);
-  useEffect(() => {
-    // if (!data.pass) {
-    //   data.pass = "";
-    //   setData({ ...data });
-    // }
-  }, [isReg]);
+
   useEffect(() => {
     if (UD.email) data.email = UD.email;
     if (UD.tel) data.tel = UD.tel;
-    if (UD.name.first || UD.nick) data.FN = UD.name.first;
-    if (UD.name.last) data.LN = UD.name.last;
-    if (UD.name.surname) data.SN = UD.name.surname;
+    if (UD.FN || UD.FN) data.FN = UD.FN;
+    if (UD.LN) data.LN = UD.LN;
+    if (UD.SN) data.SN = UD.SN;
     if (UD.city) data.optCity = UD.city;
     if (UD.branchN) data.optBranchN = UD.branchN;
     setData({ ...data });
@@ -159,15 +168,6 @@ const CheckoutFor = (props) => {
   return (
     <div className={s.formBox}>
       <div className={s.form}>
-        {/*{!props.token ? (*/}
-        {/*<>*/}
-        {/*<ModalAuth />*/}
-        {/*<span className={s.isAuthMsg} onClick={() => auMo()}>*/}
-        {/*У меня есть аккаунт и я хочу авторизироватся что бы не вводить все*/}
-        {/*эти поля!*/}
-        {/*</span>*/}
-        {/*</>*/}
-        {/*) : null}*/}
         <div className={s.namesGroup}>
           <h2>Контактные данные</h2>
           <TextField
@@ -186,7 +186,6 @@ const CheckoutFor = (props) => {
               !dataV.email ? "Пример email'a - example@gmail.com" : null
             }
             onChange={(event) => chngInpLn("email", event.target.value)}
-            // autoFocus
           />
           <TextField
             variant="outlined"
@@ -218,7 +217,6 @@ const CheckoutFor = (props) => {
             autoComplete="given-name"
             name="name"
             type="text"
-            // autoFocus
             value={data.LN}
             error={!dataV.LN}
             onChange={(event) => chngInpLn("LN", event.target.value, 1)}
@@ -228,7 +226,6 @@ const CheckoutFor = (props) => {
           />
           <TextField
             variant="outlined"
-            // color={"secondary"}
             margin="normal"
             required={true}
             fullWidth
@@ -237,7 +234,6 @@ const CheckoutFor = (props) => {
             autoComplete="additional-name"
             name="name"
             type="text"
-            // autoFocus
             value={data.FN}
             error={!dataV.FN}
             onChange={(event) => chngInpLn("FN", event.target.value, 1)}
@@ -247,7 +243,6 @@ const CheckoutFor = (props) => {
           />
           <TextField
             variant="outlined"
-            // color={"secondary"}
             margin="normal"
             required={true}
             fullWidth
@@ -256,7 +251,6 @@ const CheckoutFor = (props) => {
             autoComplete="family-name"
             name="name"
             type="text"
-            // autoFocus
             value={data.SN}
             error={!dataV.SN}
             onChange={(event) => chngInpLn("SN", event.target.value, 1)}
@@ -330,7 +324,6 @@ const CheckoutFor = (props) => {
                   {...params}
                   label="№ Отделения"
                   variant="outlined"
-                  // onChange={(e) => selectChange("city", e.target.value)}
                   InputProps={{
                     ...params.InputProps,
                     endAdornment: (
@@ -395,12 +388,6 @@ const CheckoutFor = (props) => {
               }
               label="Я согласен продать свою душу в рабство на 666 лет!"
             />
-            {/*<Checkbox*/}
-            {/*onChange={() => checkboxChange()}*/}
-            {/*color="primary"*/}
-            {/*inputProps={{ "aria-label": "secondary checkbox" }}*/}
-            {/*/>*/}
-            {/*<span> Я согласен продать свою душу в рабство на 666 лет!</span>*/}
           </div>
         </div>
       </div>
@@ -410,7 +397,7 @@ const CheckoutFor = (props) => {
         variant="contained"
         color="primary"
         className={classes.submit}
-        disabled={!done}
+        disabled={!done || stub}
         onClick={() => sendData()}
       >
         {stub ? "Отправляю!" : "Отправить заказ!"}
@@ -422,14 +409,15 @@ const mapStateToProps = (state) => {
   return {
     userData: state.auth.userData,
     token: state.auth.token,
-    stub: state.auth.stub,
+    stub: state.checkout.stub,
     optCity: state.checkout.city,
     optBranchN: state.checkout.branchN,
+    basketArr: state.addLikesBasket.basketArr,
   };
 };
 
 export const CheckoutForm = connect(mapStateToProps, {
-  changeStateAuthModal,
+  sendToDB,
   optStubOn,
   searchCityNP,
 })(CheckoutFor);

@@ -23,7 +23,7 @@ const Good = (props) => {
   let loc = useLoc().path;
   let catalog = loc.catalog;
   let productId = loc.product.split("__")[0];
-  let productLabel = loc.product.split("__")[1].replace(/_/gi, " ");
+  let productLabel = props.product?.nm;
 
   const loadOneGoods = () => {
     props.setCatalog(catalog);
@@ -32,7 +32,7 @@ const Good = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     loadOneGoods();
-  }, []);
+  }, [productId]);
 
   return (
     <div className={s.goodsBox}>

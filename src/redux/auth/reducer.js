@@ -1,4 +1,11 @@
-import { AUTH_API, AUTH_EXIT, AUTH_STUB, FORM_CHANGE } from "../types";
+import {
+  AUTH_API,
+  AUTH_EXIT,
+  AUTH_STUB,
+  AUTH_UPDATE,
+  FORM_CHANGE,
+  UD_COMMENT,
+} from "../types";
 import { get, set } from "../../localStorage/localStorFunc";
 
 let user = get("auth/userData") || set("auth/userData", "");
@@ -11,16 +18,14 @@ let initialState = {
   invalid: false,
   token: token,
   userData: {
-    nick: user?.nick,
     email: user?.email,
     tel: user?.tel,
-    name: {
-      first: user?.name?.first,
-      last: user?.name?.last,
-      surname: user?.name?.surname,
-    },
+    FN: user?.FN,
+    LN: user?.LN,
+    SN: user?.SN,
     city: user?.city,
     branchN: user?.branchN,
+    boughtArr: user?.boughtArr,
   },
 };
 
@@ -31,13 +36,23 @@ export const auth = (state = initialState, action) => {
       return { ...state };
 
     case AUTH_API:
-      // console.log(action);
-      if (action.payload?.invalid) state.invalid = action.payload.message;
-      if (action.payload?.token && !state.token) {
-        state.token = action.payload.token;
-        state.userData.nick = action.userData.nick;
-        state.userData.email = action.userData.email;
-        set("auth/token", action.payload.token);
+      if (action.payload?.invalid) {
+        state.invalid = action.payload.message;
+      } else {
+        if (action.payload?.token) {
+          state.token = action.payload.token;
+          set("auth/token", action.payload.token);
+        }
+        if (action.userData) {
+          state.userData = action.userData;
+          set("auth/userData", state.userData);
+        }
+      }
+      return { ...state };
+
+    case AUTH_UPDATE:
+      if (action.payload?.UD) {
+        state.userData = action.payload.UD;
         set("auth/userData", state.userData);
       }
       return { ...state };
@@ -46,10 +61,16 @@ export const auth = (state = initialState, action) => {
       state.auth = !state.auth;
       return { ...state };
 
+    case UD_COMMENT:
+      state.userData.boughtArr[action.bIndex].goods[
+        action.gIndex
+      ].comment = true;
+      return { ...state };
+
     case AUTH_EXIT:
       set("auth/token", "");
       set("auth/userData", "");
-      state.userData = initialState.userData;
+      state.userData = {};
       state.token = "";
       return { ...state };
 

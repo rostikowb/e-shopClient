@@ -7,12 +7,17 @@ import { connect } from "react-redux";
 import { fetchOneGoods } from "../../../../redux/oneGoods/action";
 
 export const GoodsBloc = (props) => {
+  let productId = props.loc;
   let d = props.data;
   let link = d._id + "__" + d["nm"].replace(/\s/gi, "_").replace(/\//gi, "-");
 
   const chaProd = () => {
-    props.fetchOneGoods(d._id, false, d);
-    window.scrollTo(0, 0);
+    if (d._id === productId) {
+      window.scrollTo(0, 0);
+    } else {
+      props.fetchOneGoods(d._id, false, d);
+      window.scrollTo(0, 0);
+    }
   };
 
   return (

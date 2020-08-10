@@ -1,8 +1,7 @@
 import React from "react";
 import s from "./upperBar.module.css";
 import { Sort } from "./sort/sort";
-import { Sal, Salt } from "./salt/salt";
-import { fetchGoods, stubOn } from "../../../redux/goodsArr/actions";
+import { Salt } from "./salt/salt";
 import { connect } from "react-redux";
 
 export const UpperBa = (props) => {

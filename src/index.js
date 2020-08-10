@@ -12,7 +12,7 @@ import { MuiThemeProvider } from "material-ui";
 import { ruRU } from "@material-ui/core/locale";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-const store = createStore(
+export const store = createStore(
   rootReducer,
   compose(
     applyMiddleware(thunk),
