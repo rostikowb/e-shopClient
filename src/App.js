@@ -9,6 +9,7 @@ import { config } from "react-transition-group";
 import { initLocalStorage } from "./localStorage/localStorFunc";
 import { Checkout } from "./components/pages/checkout/checkout";
 import { GoodsRoute } from "./components/routes/goods";
+import { Feedback } from "./components/dopComp/feedback/feedback";
 
 // const AddNewsPage = React.lazy(() => import('./components/adminPanel/addNews/addNewsPage/addNewsPage'));
 // const AdminPanel = React.lazy(() =>
@@ -43,6 +44,7 @@ class App extends Component {
               </div>
             }
           >
+            <Feedback />
             <Switch>
               <Route path="/checkout" component={Checkout} />
               <Route path="/" component={GoodsRoute} />

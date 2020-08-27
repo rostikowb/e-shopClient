@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { changeStateBasketModal } from "../../../../../redux/modal/actions";
 import { BasketCart } from "./basket/basketCard";
 import { SumInf } from "./dopInf/dopInf";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 export const BasketModa = (props) => {
   let mdl = props.basket;
@@ -16,7 +18,15 @@ export const BasketModa = (props) => {
         className={s.modal_basked_box}
       />
       <div className={s.modal_basked}>
-        <h2 className={s.title}>Корзина</h2>
+        <div className={s.topModal}>
+          <span className={s.title}>Корзина</span>
+          <FontAwesomeIcon
+            onClick={() => props.changeStateBasketModal()}
+            className={s.clsModalBtn}
+            icon={faTimesCircle}
+          />
+        </div>
+
         <ul className={s.baskedBoxIn}>
           {arr?.length ? (
             arr.map((item, index) => (

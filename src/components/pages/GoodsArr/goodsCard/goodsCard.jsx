@@ -10,11 +10,13 @@ import { InStock } from "./inStock/inStock";
 import { CardLikeBox } from "./like/cardLike";
 import { CardBasketBox } from "./basket/cardBasket";
 import { ShortHaractBox } from "./shortHaract/shortHaract";
+import { useHistory } from "react-router";
 
 export const GoodsCard = (props) => {
   let dt = props.data[0];
   let isLike = props.data[1];
   let dvnld = props.data[2];
+  let loc = useHistory().location.pathname.split("__")[0].split("/")[2];
   let link = dt._id + "__" + dt["nm"].replace(/\s/gi, "_").replace(/\//gi, "-");
   return (
     <Paper className={!isLike ? s.cardBox : s.cardBoxLite} elevation={3}>
@@ -27,6 +29,7 @@ export const GoodsCard = (props) => {
                 link: link,
                 download: dvnld,
               }}
+              loc={loc}
             />
           </LazyLoad>
           <Title
@@ -35,8 +38,9 @@ export const GoodsCard = (props) => {
               link: link,
               download: dvnld,
             }}
+            loc={loc}
           />
-          <RatingBox />
+          <RatingBox data={dt} link={link} />
         </div>
 
         <div className={s.bottom}>

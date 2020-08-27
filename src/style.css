@@ -45,7 +45,7 @@ a {
   max-width: 1980px;
   /*max-width: 30%;*/
   /*margin-top: 80px;*/
-  margin: 0 auto 25px auto;
+  margin: 0 auto 0 auto;
 }
 
 .btnType1 {
@@ -54,6 +54,7 @@ a {
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.8);
   transition: all 0.2s;
+  user-select: none;
 }
 
 .btnType1:hover {
@@ -106,13 +107,13 @@ a {
   display: none;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1150px) {
   .main {
     padding: 0 25px;
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1150px) {
   .main {
     margin-top: 0;
   }

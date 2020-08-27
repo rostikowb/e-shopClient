@@ -1,7 +1,9 @@
 export const option = {
-  api: "http://localhost:3001",
-  // api: 'https://api.poap.pl.ua',
-  // domen: 'http://localhost:3000'
+  // api: "http://localhost:3001",
+  // api: "http://192.168.1.104:3001",
+  api: "https://api.vsivuha.online",
+  STATIC: "https://vsivuha.online/static",
+
   // goodsCount
   GC: 59,
 

@@ -25,7 +25,7 @@ export const CommentBo = (props) => {
     if (isBuyS) props.authUpdateUD(token);
   };
 
-  console.log(comments);
+  // console.log(comments);
   const isBuyF = () => {
     UD.boughtArr.forEach((item, index) => {
       if (

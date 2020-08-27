@@ -14,13 +14,13 @@ export const DopInf = (props) => {
       <GoodsTitle data={data["nm"]} />
       <div className={s.topInfBox}>
         <OGPrice price={[data["rtlPrc"], data["dscnt"], data["avlbl"]]} />
-        <StarsBar />
+        <StarsBar data={data} />
         <OGBtn data={data} />
       </div>
       <DeliveryGoodsPage />
       <GuaranteeGoodPage />
-      <div></div>
-      <div></div>
+      {/*<div></div>*/}
+      {/*<div></div>*/}
     </div>
   );
 };

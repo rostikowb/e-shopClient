@@ -37,10 +37,20 @@
 .goodsElem > *:hover {
   z-index: 3;
 }
+
+.topModal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #6d6d6d;
+  padding: 5px;
+  color: #6d6d6d;
+}
 .title {
   font-size: 25px;
-  border-bottom: 1px solid black;
-  width: auto;
-  padding: 5px;
-  text-align: left;
+}
+.clsModalBtn {
+  font-size: 250%;
+  cursor: pointer;
 }

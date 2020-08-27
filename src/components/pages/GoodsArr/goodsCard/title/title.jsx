@@ -12,8 +12,10 @@ const Titl = (props) => {
   let dvnld = props.data.download;
 
   const loadOneGoods = () => {
-    props.setCatalog(d["ctgrId"]);
-    props.fetchOneGoods(d["_id"], false, d);
+    if (d._id !== props.loc) {
+      props.setCatalog(d["ctgrId"]);
+      props.fetchOneGoods(d["_id"], false, d);
+    }
     props.changeStateLikeModal();
   };
 

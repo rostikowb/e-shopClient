@@ -20,7 +20,7 @@ export const DeliveryGoodsPage = () => {
           </span>
         </li>
         <li>
-          <span>Наложеным платежом/наличными</span>
+          <span>Наложеным платежом</span>
           <span>
             <b>от 60 грн.</b>
           </span>

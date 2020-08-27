@@ -26,6 +26,7 @@ let initialState = {
     city: user?.city,
     branchN: user?.branchN,
     boughtArr: user?.boughtArr,
+    cupon: user?.cupon,
   },
 };
 
@@ -65,6 +66,7 @@ export const auth = (state = initialState, action) => {
       state.userData.boughtArr[action.bIndex].goods[
         action.gIndex
       ].comment = true;
+      set("auth/userData", state.userData);
       return { ...state };
 
     case AUTH_EXIT:

@@ -1,6 +1,6 @@
 .suma {
   width: 100%;
-  height: 16%;
+  height: 18.5%;
   border-top: 2px solid rgba(179, 179, 179, 0.47);
   display: flex;
   flex-direction: row;
@@ -79,4 +79,91 @@
 }
 .sumaBtn a {
   color: white;
+}
+
+.MobileSuma {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 16px;
+  margin: 0 10px;
+}
+.MobileSuma > span {
+  margin: 3px 0;
+}
+@media (max-width: 890px) {
+  .sumaBtn {
+    font-size: 23px;
+    padding: 5px;
+  }
+  .countSum {
+    font-size: 200%;
+    margin-left: 10px;
+    width: 28%;
+  }
+  .deliv {
+    width: 255px;
+  }
+  /*.suma {*/
+  /*flex-direction: column;*/
+  /*height: 16%;*/
+  /*}*/
+}
+@media (max-width: 716px) {
+  .MobileSuma {
+    display: flex;
+    width: 49%;
+  }
+  .countSum {
+    display: none;
+  }
+  .deliv {
+    display: none;
+  }
+  .sumaBtn {
+    padding: 15px 5px;
+  }
+}
+@media (max-width: 622px) {
+  .sumaBtnBox {
+    width: 49%;
+  }
+  .sumaBtn {
+    font-size: 20px;
+  }
+}
+@media (max-width: 395px) {
+  .suma {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 21%;
+  }
+  .suma > * {
+    margin: 5px 0 0 0;
+  }
+  .MobileSuma > * {
+    margin: 3px 0 0 0;
+  }
+  .sumaBtn {
+    margin: 0;
+    width: 100%;
+    user-select: none;
+  }
+  .sumaBtnBox {
+    margin: 0 0 -2px 0;
+  }
+  .sumaBtnBox,
+  .MobileSuma {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .MobileSuma {
+    flex-direction: column;
+    margin: 0;
+  }
 }

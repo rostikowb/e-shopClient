@@ -12,7 +12,7 @@ export const SumInf = (props) => {
     <div className={s.suma}>
       {/*<div className={s.sumaInBox}>*/}
       <span className={s.countSum}>
-        {count} шт. = <span className={s.red}>{sum}</span> грн.
+        {count} шт. = <span className={s.red}>&nbsp;{sum}&nbsp;</span> грн.
       </span>
       <ul className={s.deliv}>
         <span className={s.delivTitle}>Расчетная стоимость доставки</span>
@@ -28,6 +28,14 @@ export const SumInf = (props) => {
       {/*Количество: <span>{count}</span>В суме:*/}
       {/*<span>{sum.toLocaleString("ru-RU")}</span>*/}
       {/*</div>*/}
+      <div className={s.MobileSuma}>
+        <span>
+          Товара на <b>{sum}</b>грн.
+        </span>
+        <span>
+          Доставка <b>40-{deliv}</b>грн.
+        </span>
+      </div>
       <div className={s.sumaBtnBox}>
         <span className={s.sumaBtn + " " + ss.cardBoxAll}>
           <NavLink to={`/checkout`}>Пройти на касу!</NavLink>

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import s from "./goods.module.css";
-import { UpperBar } from "../../dopComp/upperBar/upperBar";
 import { connect } from "react-redux";
 import { useLocation, useParams } from "react-router";
 import { fetchOneGoods } from "../../../redux/oneGoods/action";
@@ -23,7 +22,6 @@ const Good = (props) => {
   let loc = useLoc().path;
   let catalog = loc.catalog;
   let productId = loc.product.split("__")[0];
-  let productLabel = props.product?.nm;
 
   const loadOneGoods = () => {
     props.setCatalog(catalog);
@@ -36,7 +34,6 @@ const Good = (props) => {
 
   return (
     <div className={s.goodsBox}>
-      <UpperBar name={productLabel} />
       {props.product ? (
         <>
           <div className={s.goodsInfo}>

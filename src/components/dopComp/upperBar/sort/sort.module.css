@@ -4,12 +4,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 382px;
+  /*width: 392px;*/
   padding: 3px 0;
   z-index: 5;
 }
 .sortSelect {
   width: 200px;
+}
+.selects > span {
+  margin: 0 5px 0 0;
 }
 .selects > select {
   margin: 0 5px;
@@ -23,12 +26,19 @@
   font-size: 14px;
   z-index: 5;
 }
-
-@media (max-width: 800px) {
+@media (max-width: 920px) {
   .selects {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
+    /*display: none;*/
+  }
+  .selects > span {
+    display: none;
   }
 }
+/*@media (max-width: 800px) {*/
+/*.selects {*/
+/*display: flex;*/
+/*flex-direction: row;*/
+/*align-items: center;*/
+/*justify-content: flex-end;*/
+/*}*/
+/*}*/

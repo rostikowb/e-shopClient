@@ -14,16 +14,17 @@ export const CardLikeBo = (props) => {
   let lr = props.likeArr;
   let isLikes = lr ? lr.find((item) => item._id == d._id) : null;
   const add = (type) => {
-    props.addProdToCash(d["_id"], type);
+    props.addProdToCash(d["_id"], type, true, d);
   };
-
+  console.log(isLikes);
   const remove = (type) => {
     props.delProdToCash(type, d);
   };
   return (
     <div
       onClick={() => (isLikes ? remove(DEL_LIKES) : add(ADD_LIKES))}
-      className={s.likeBox + " " + (isLikes ? s.likeBoxAct : null)}
+      style={{ backgroundColor: isLikes ? "#9B0000" : "#6f000070" }}
+      className={s.likeBox}
     >
       <FontAwesomeIcon
         style={{ color: isLikes ? "white" : null }}

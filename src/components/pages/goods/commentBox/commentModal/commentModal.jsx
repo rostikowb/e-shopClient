@@ -73,7 +73,6 @@ export const CommentModa = (props) => {
             autoComplete="name"
             name="name"
             type="text"
-            autoFocus
             error={!dataV.name}
             onChange={(event) => changeText("name", event.target.value, 2)}
           />
@@ -96,7 +95,7 @@ export const CommentModa = (props) => {
             required={true}
             fullWidth
             id="msg"
-            label="Помогите другим, опишите свой опыт!"
+            label="Опишите свой опыт!"
             autoComplete="msg"
             name="msg"
             type="text"
@@ -152,7 +151,16 @@ export const CommentModa = (props) => {
           >
             Отправить
           </Button>
-          {/*<div className={s.commentSendBtn}></div>*/}
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="secondary"
+            className={classes.submit}
+            onClick={() => props.changeStateCommentsModal()}
+          >
+            Закрыть
+          </Button>
         </div>
       </div>
     </>

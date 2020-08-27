@@ -7,9 +7,11 @@ import { fetchGoods, stubOn } from "../../../../redux/goodsArr/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGhost } from "@fortawesome/free-solid-svg-icons/index";
 import { option } from "../../../../option";
+import { useLocation } from "react-router";
 
 export const Sal = (props) => {
-  // console.log(props.catalog);
+  let path = useLocation().pathname;
+  let prodLab = path.split("/");
   let catalogLabel = props.catalog
     ? option.goods.find((e) => e.value === props.catalog.toString()).label
     : null;
@@ -21,7 +23,6 @@ export const Sal = (props) => {
 
   const catalogPage = () => {
     props.stubOn({ type: STUB_ON });
-    console.log(props.sort);
     props.fetchGoods({
       type: FETCH_GOODS,
       catalog: props.catalog,
@@ -35,13 +36,18 @@ export const Sal = (props) => {
         <span onClick={() => mainPage()}>Главная</span>
       </NavLink>{" "}
       <FontAwesomeIcon className={s.icon} icon={faGhost} />
-      <NavLink to={"/" + props.catalog}>
-        <span onClick={() => catalogPage()}> {catalogLabel}</span>
-      </NavLink>
-      {props?.name ? (
+      {prodLab[1] ? (
         <>
-          <FontAwesomeIcon className={s.icon} icon={faGhost} />{" "}
-          <span className={s.goodsName}>{props.name} </span>
+          <NavLink to={"/" + props.catalog}>
+            <span onClick={() => catalogPage()}> {catalogLabel}</span>
+          </NavLink>
+          {prodLab[2] ? (
+            <>
+              &nbsp;
+              <FontAwesomeIcon className={s.icon} icon={faGhost} />{" "}
+              <span className={s.goodsName}>{props.name} </span>
+            </>
+          ) : null}
         </>
       ) : null}
     </div>

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import s from "./goodsArr.module.css";
-import { UpperBar } from "../../dopComp/upperBar/upperBar";
 import { connect } from "react-redux";
 import { fetchGoods, stubOn, thisUrl } from "../../../redux/goodsArr/actions";
 import { FETCH_GOODS, STUB_ON } from "../../../redux/types";
@@ -18,8 +17,8 @@ function useLoc() {
 const GoodsAr = (props) => {
   let location = useLoc();
   let page = Number(location.query.get("page"));
-  let sort = location.query.get("sort");
-  let path = useLoc().path;
+  let sort = location.query.get("sort") || props.sort;
+  let path = useLocation().pathname.slice(1);
 
   const firstLoad = () => {
     props.stubOn({ type: STUB_ON });
@@ -32,12 +31,11 @@ const GoodsAr = (props) => {
   };
 
   useEffect(() => {
-    if (props.isFirstL) firstLoad();
-  }, []);
+    firstLoad();
+  }, [path]);
 
   return (
     <div className={s.goodsArr}>
-      <UpperBar />
       <ul className={s.goodsBox}>
         {/*Підгружені карточки товару*/}
         {!props.stub && !props.stub ? <GoodsArrLoad /> : null}

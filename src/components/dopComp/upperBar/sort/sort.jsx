@@ -11,11 +11,12 @@ import { FETCH_GOODS, STUB_ON } from "../../../../redux/types";
 import { useHistory } from "react-router";
 
 const options = [
-  { value: "random", label: "Стандарту" },
+  // { value: "random", label: "Стандарту" },
+  { value: "byRating", label: "По рейтингу" },
   { value: "priceMinMax", label: "Цена: min-max" },
   { value: "priceMaxMin", label: "Цена: max-min" },
-  { value: "byRating", label: "По рейтингу" },
-  { value: "byDate", label: "По дате поступления" },
+
+  // { value: "byDate", label: "По дате поступления" },
 ];
 
 const Sor = (props) => {

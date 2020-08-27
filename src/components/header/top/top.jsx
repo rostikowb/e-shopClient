@@ -1,5 +1,4 @@
 import React from "react";
-// import {NavLink} from "react-router-dom";
 import s from "./top.module.css";
 import { Info } from "./info/info";
 import Auth from "./auth/auth";

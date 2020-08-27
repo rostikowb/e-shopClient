@@ -1,11 +1,20 @@
 import bent from "bent";
 import { option } from "../../option";
-import { AUTH_API, CHE_OPT, OPT_DONE } from "../types";
+import { AUTH_API, CHE_OPT, CUPON_SET, OPT_DONE } from "../types";
 
 export const optStubOn = (type) => {
   return (dispatch) => {
     dispatch({
       type: type,
+    });
+  };
+};
+
+export const setCupon = (cupon) => {
+  return (dispatch) => {
+    dispatch({
+      type: CUPON_SET,
+      cupon,
     });
   };
 };

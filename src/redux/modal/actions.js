@@ -3,7 +3,9 @@ import {
   CHANGE_BASKET_MODAL,
   CHANGE_CATALOG_MODAL,
   CHANGE_COMMENTS_MODAL,
+  CHANGE_FEEDBACK_MODAL,
   CHANGE_LIKE_MODAL,
+  TICKET_DONE,
 } from "../types";
 
 export const changeStateAuthModal = () => {
@@ -33,5 +35,12 @@ export const changeStateBasketModal = () => {
 export const changeStateCommentsModal = () => {
   return {
     type: CHANGE_COMMENTS_MODAL,
+  };
+};
+
+export const changeStateFeedbackModal = () => {
+  return (dispatch) => {
+    dispatch({ type: TICKET_DONE });
+    dispatch({ type: CHANGE_FEEDBACK_MODAL });
   };
 };

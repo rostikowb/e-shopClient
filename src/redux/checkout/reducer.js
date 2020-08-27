@@ -1,4 +1,10 @@
-import { CHE_OPT, OPT_DONE, OPT_SEND_STUB, OPT_STUB } from "../types";
+import {
+  CHE_OPT,
+  CUPON_SET,
+  OPT_DONE,
+  OPT_SEND_STUB,
+  OPT_STUB,
+} from "../types";
 
 let initialState = {
   stub: false,
@@ -15,6 +21,7 @@ let initialState = {
     arr: [],
     done: false,
   },
+  cupon: 0,
 };
 
 export const checkout = (state = initialState, action) => {
@@ -41,6 +48,10 @@ export const checkout = (state = initialState, action) => {
       } else {
         state.isDoneSend = !!action.res;
       }
+      return { ...state };
+
+    case CUPON_SET:
+      if (Number.isInteger(action.cupon)) state.cupon = action.cupon;
       return { ...state };
 
     case OPT_STUB:

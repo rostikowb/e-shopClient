@@ -25,13 +25,13 @@ export const DescChar = (props) => {
       <div className={s.descBox}>
         <h2>Описание</h2>
         <div
-          style={{ maxHeight: !isActive ? "187px" : "1700px" }}
+          // style={{ maxHeight: !isActive ? "187px" : "1700px" }}
           className={s.desc}
           dangerouslySetInnerHTML={{ __html: props.data[0] }}
         />
-        <span onClick={() => setActive(!isActive)} className={s.openBtn}>
-          {!isActive ? "Развернуть" : "Свернуть"}
-        </span>
+        {/*<span onClick={() => setActive(!isActive)} className={s.openBtn}>*/}
+        {/*{!isActive ? "Развернуть" : "Свернуть"}*/}
+        {/*</span>*/}
       </div>
     </div>
   );

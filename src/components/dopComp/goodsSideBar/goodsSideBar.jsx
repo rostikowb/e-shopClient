@@ -6,6 +6,7 @@ import { useHistory } from "react-router";
 
 export const GoodsSideBa = (props) => {
   let loc = useHistory().location.pathname.split("__")[0].split("/")[2];
+
   return (
     <div className={s.goodsArrBox}>
       <span className={s.sideBarTitle}>Вы недавно смотрели</span>
@@ -22,6 +23,7 @@ export const GoodsSideBa = (props) => {
 const mapStateToProps = (state) => {
   return {
     arr: state.oneGoods.visitedArr,
+    product: state.oneGoods.product,
   };
 };
 

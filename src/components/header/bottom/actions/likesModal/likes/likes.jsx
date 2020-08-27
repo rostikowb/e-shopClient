@@ -6,12 +6,24 @@ import {
 } from "../../../../../../redux/likesBasket/actions";
 import { connect } from "react-redux";
 import { GoodsCard } from "../../../../../pages/GoodsArr/goodsCard/goodsCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { changeStateLikeModal } from "../../../../../../redux/modal/actions";
 
 export const Like = (props) => {
   let lr = props.likesArr;
+
   return (
     <>
-      <h2 className={s.title}>Избранное</h2>
+      <div className={s.topModal}>
+        <span className={s.title}>Избранное</span>
+        <FontAwesomeIcon
+          onClick={() => props.changeStateLikeModal()}
+          className={s.clsModalBtn}
+          icon={faTimesCircle}
+        />
+      </div>
+
       <ul className={s.likeBoxIn}>
         {lr?.length ? (
           lr.map((item) => (
@@ -39,4 +51,5 @@ const mapStateToProps = (state) => {
 export const Likes = connect(mapStateToProps, {
   addProdToCash,
   delProdToCash,
+  changeStateLikeModal,
 })(Like);

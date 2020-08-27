@@ -62,8 +62,35 @@
 }
 .title {
   font-size: 25px;
-  border-bottom: 2px solid rgba(179, 179, 179, 0.47);
-  width: auto;
+}
+.topModal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #6d6d6d;
   padding: 5px;
-  text-align: left;
+  color: #6d6d6d;
+}
+
+.clsModalBtn {
+  font-size: 250%;
+  cursor: pointer;
+}
+@media (max-width: 1250px) {
+  .modal_basked {
+    left: 2%;
+    width: 96vw;
+  }
+}
+@media (max-width: 890px) {
+  .modal_basked {
+    left: 2%;
+    width: 96vw;
+  }
+}
+@media (max-width: 395px) {
+  .baskedBoxIn {
+    height: 70%;
+  }
 }

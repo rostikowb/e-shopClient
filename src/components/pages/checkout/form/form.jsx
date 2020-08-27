@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  FormControlLabel,
-  CircularProgress,
-  Checkbox,
   Button,
-  TextField,
+  Checkbox,
+  CircularProgress,
+  FormControlLabel,
   makeStyles,
+  TextField,
 } from "@material-ui/core";
 import { Autocomplete } from "@material-ui/lab";
 import { connect } from "react-redux";
-import { changeStateAuthModal } from "../../../../redux/modal/actions";
 import {
   optStubOn,
   searchCityNP,
@@ -67,6 +66,7 @@ const CheckoutFor = (props) => {
     SN: UD.SN || "",
     optCity: UD.city || "",
     optBranchN: UD.branchN || "",
+    cupon: props.cupon || 0,
   });
   const [dataV, setDataV] = useState({
     email: !!data.email,
@@ -165,6 +165,10 @@ const CheckoutFor = (props) => {
     setData({ ...data });
   }, [UD]);
 
+  useEffect(() => {
+    data.cupon = props.cupon;
+    setData({ ...data });
+  }, [props.cupon]);
   return (
     <div className={s.formBox}>
       <div className={s.form}>
@@ -383,6 +387,7 @@ const CheckoutFor = (props) => {
                   onChange={() => checkboxChange()}
                   name="checkediAgree"
                   color="primary"
+                  size="medium"
                   inputProps={{ "aria-label": "secondary checkbox" }}
                 />
               }
@@ -412,6 +417,7 @@ const mapStateToProps = (state) => {
     stub: state.checkout.stub,
     optCity: state.checkout.city,
     optBranchN: state.checkout.branchN,
+    cupon: state.checkout.cupon,
     basketArr: state.addLikesBasket.basketArr,
   };
 };

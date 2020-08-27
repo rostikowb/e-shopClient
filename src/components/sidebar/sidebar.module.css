@@ -9,10 +9,10 @@
 }
 
 .mainBox > * {
-  margin: 5px 0 200px 0;
+  margin: 5px 0 80px 0;
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1150px) {
   .mainBox {
     display: none;
   }
@@ -23,7 +23,7 @@
   }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1150px) {
   .mainBox {
     width: 30vw;
   }

@@ -62,19 +62,8 @@
   pointer-events: none;
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1150px) {
   .actionBox {
     height: 48px;
-  }
-}
-
-@media (max-width: 332px) {
-  .actionBox {
-    margin-left: 19vw;
-  }
-}
-@media (max-width: 300px) {
-  .actionBox {
-    margin-left: 10vw;
   }
 }

@@ -24,14 +24,20 @@ export const Bottom = connect(mapStateToProps, {
 })((props) => {
   return (
     <div className={s.headerBottom}>
-      <MenuBtn />
-      <Logo />
-      <CatalogBtn />
-      <Search />
-      <Actions />
-      {props.catalog ? <CatalogModal /> : null}
-      {props.like ? <LikesModal /> : null}
-      {props.basket ? <BasketModal /> : null}
+      <div className={s.leftBottom}>
+        <MenuBtn />
+        <Logo />
+        <CatalogBtn />
+      </div>
+      <div className={s.rightBottom}>
+        <Search />
+        <div className={s.modalBox}>
+          {props.catalog ? <CatalogModal /> : null}
+          {props.like ? <LikesModal /> : null}
+          {props.basket ? <BasketModal /> : null}
+        </div>
+        <Actions />
+      </div>
     </div>
   );
 });

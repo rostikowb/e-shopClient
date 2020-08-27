@@ -5,13 +5,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 5px;
+  padding: 15px 10px;
   cursor: pointer;
   margin: 25px;
   border: 1px solid #6b0d68;
   border-radius: 2px;
   /*padding: 0 5px;*/
-  font-size: 1.2vw;
+  font-size: 22px;
   transition: all 0.15s;
 }
 .addCommentBtn:hover {
@@ -19,4 +19,10 @@
   /*background-color: #6b0d68;*/
   transition: all 0.15s;
   color: white;
+}
+@media (max-width: 1350px) {
+  .addCommentBtn {
+    padding: 10px 5px;
+    font-size: 22px;
+  }
 }

@@ -12,3 +12,11 @@
 .ratingBox a {
   color: #000;
 }
+.ratingTitle {
+  font-size: 18px;
+}
+@media (max-width: 366px) {
+  .ratingBox {
+    margin: 10px 0;
+  }
+}

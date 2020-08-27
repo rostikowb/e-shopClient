@@ -48,7 +48,7 @@
   }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1150px) {
   .goodsArr {
     /*width: 70vw;*/
   }
@@ -57,7 +57,7 @@
   }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1150px) {
   .goodsArr {
     /*width: 100vw;*/
   }
@@ -83,6 +83,12 @@
 @media (max-width: 370px) {
   .goodsBox > * {
     /*margin: 2vh 0.1vw;*/
-    width: 65%;
+    width: 70%;
+  }
+}
+@media (max-width: 300px) {
+  .goodsBox > * {
+    /*margin: 2vh 0.1vw;*/
+    width: 90%;
   }
 }

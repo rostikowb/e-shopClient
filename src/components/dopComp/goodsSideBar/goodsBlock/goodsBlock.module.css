@@ -1,6 +1,7 @@
 .oneBlockBox {
   max-width: 16%;
-  height: 255px;
+  min-width: 150px;
+  height: 260px;
   background-color: white;
   margin: 0 2px;
   padding: 0 2px;
@@ -25,7 +26,22 @@
   width: 100%;
   overflow: hidden;
 }
-.imgBox > img {
-  /*width: 211px;*/
-  height: 160px;
+.imgBox picture {
+  width: 100%;
+}
+.imgBox img,
+.imgBox source {
+  width: 174px;
+  /*height: 100%;*/
+}
+@media (max-width: 1150px) {
+  .imgBox > img {
+    width: 111px;
+  }
+  .oneBlockBox {
+    margin: 5px 0;
+  }
+  .goodsArrInBox {
+    justify-content: space-around;
+  }
 }

@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  z-index: 1;
 }
 
 .rightMain {
@@ -11,4 +12,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+}
+@media (max-width: 1150px) {
+  .rightMain {
+    width: 100%;
+    /*font-size: 20px;*/
+  }
 }

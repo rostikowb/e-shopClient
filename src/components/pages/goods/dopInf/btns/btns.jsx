@@ -19,7 +19,7 @@ export const OGBt = (props) => {
   let isBasket = br ? br.find((item) => item._id == d._id) : null;
 
   const add = (type) => {
-    props.addProdToCash(d["_id"], type, false, d);
+    props.addProdToCash(d["_id"], type, true, d);
   };
   const remove = (type) => {
     props.delProdToCash(type, d);
@@ -47,10 +47,10 @@ export const OGBt = (props) => {
 
       <div
         onClick={() => (isLikes ? remove(DEL_LIKES) : add(ADD_LIKES))}
-        className={s.likeBtn}
+        className={s.likeBtn + " " + (isLikes ? s.likeBtnAct : s.likeBtnNoAct)}
       >
         <FontAwesomeIcon
-          className={s.icon + " " + (isLikes ? s.likeBtnAct : null)}
+          className={s.icon}
           title={
             !isLikes
               ? "Добавить товар в избранное/понравившееся."

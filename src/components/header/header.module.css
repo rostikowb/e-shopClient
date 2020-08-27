@@ -46,7 +46,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1150px) {
   .wrapper {
     padding-left: 24px;
     padding-right: 24px;
@@ -60,9 +60,14 @@
   }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1150px) {
   header {
     z-index: 4;
     position: fixed;
+  }
+}
+@media (max-width: 360px) {
+  .wrapper {
+    min-width: 0;
   }
 }

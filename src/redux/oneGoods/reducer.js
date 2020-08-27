@@ -24,12 +24,12 @@ const initialState = {
 export const oneGoods = (state = initialState, action) => {
   switch (action.type) {
     case PRODUCT:
-      // console.log(action.payload);
       if (!state.visitedArr) state.visitedArr = get("goods/visited");
-      // if(!action.payload?.comments?.length) action.payload?.comments = false;
-      if (action.payload) state.product = action.payload;
+      if (action.payload && action.payload !== state.product)
+        state.product = action.payload;
       state.imgOnShow = action.payload.img[0];
       state.visitedArr = addVisitedArr(state.visitedArr, action.payload);
+      state.commErrMsg = null;
       set("goods/visited", state.visitedArr);
       return { ...state };
 

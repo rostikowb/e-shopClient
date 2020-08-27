@@ -25,6 +25,8 @@ const Checkou = (props) => {
   );
 };
 
+// Зробить систему купонів на клієнті!!!!
+
 export const Checkout = connect(null, {
   changeStateAuthModal,
 })(Checkou);

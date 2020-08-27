@@ -70,3 +70,23 @@
   color: #002772;
   transition: all 0.2s;
 }
+
+@media (max-width: 1150px) {
+  .content {
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 700px) {
+  .content {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 0;
+  }
+}
+@media (max-width: 440px) {
+  .headerWrapper {
+    padding: 0 0;
+    min-width: 270px;
+  }
+}

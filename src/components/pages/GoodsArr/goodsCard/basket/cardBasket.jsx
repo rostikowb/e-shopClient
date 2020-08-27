@@ -15,7 +15,7 @@ export const CardBasketBo = (props) => {
   let br = props.basketArr;
   let isBasket = br ? br.find((item) => item._id == d._id) : null;
   const add = (type) => {
-    props.addProdToCash(d["_id"], type);
+    props.addProdToCash(d["_id"], type, true, d);
   };
   return (
     <>

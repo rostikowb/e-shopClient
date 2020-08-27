@@ -15,15 +15,13 @@ const initialState = {
   stub: true,
   stubP: false,
   url: "",
-  sort: "random",
+  sort: "byRating",
 };
 
 export const AllGoodsR = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_GOODS:
-      if (action.sort) {
-        state.sort = action.sort;
-      }
+      if (action.sort) state.sort = action.sort;
       state.isFirstL = false;
       state.currGoods = action.payload;
       state.catalog = action.catalog;
