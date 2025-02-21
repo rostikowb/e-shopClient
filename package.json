@@ -40,7 +40,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-router-query-params": "^1.0.4",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^5.0.1",
     "react-select": "^3.1.0",
     "react-share": "^4.2.0",
     "react-simply-carousel": "^2.1.9",
